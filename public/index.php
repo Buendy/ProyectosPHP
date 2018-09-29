@@ -11,8 +11,8 @@
 			<li><a href="/hoja1/ejercicio_5.php">Problema 5</a></li>
 			<li><a href="/hoja1/ejercicio_6.php">Problema 6</a></li>
 			<li><a href="/hoja1/ejercicio_7.php">Problema 7</a></li>
-			<li>Problema 8</li>
-			<li>Problema 9</li>
+			<li><a href="/hoja1/ejercicio_8.php">Problema 8</a></li>
+			<li><a href="/hoja1/ejercicio_9.php">Problema 9</a></li>
 			<li>Problema 10</li>
 		</ul>
 	</li>
