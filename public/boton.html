@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Botón de hora</title>
+	<script type="text/javascript">
+		/*
+		Se ejecuta la función cada segundo, dónde se mostrará la hora--Esta función llama  la función crearHora()
+		*/
+		function bucle(){
+				setInterval(crearHora,1000);
+			}
+		/*		
+		En la función se crean tres objetos para obtener la hora, minutos y segundos mediante los métodos get de Date
+		Cuando se ha obtenido la hora, minutos y segundos y dado un formato se llama a la función 
+		mostrarHora() pasandole como parámetro el resultado
+		*/
+		function crearHora(){
+			var hour = new Date();
+			var minutes = new Date();
+			var seconds = new Date();
+			
+			resultado = "\t \t" +  hour.getHours() + ":" + minutes.getMinutes() + ":" + seconds.getSeconds();
+			mostrarHora(resultado);
+
+		}
+
+		/*	
+		En esta función le damos valor a textbox para mostrarlo. Mediante document.getElementById('textbox') nos hemos traído el elemento del
+		HTML identificado con una id
+		*/
+		function mostrarHora(resultado){
+			var textbox = document.getElementById('textbox');
+			textbox.value = resultado;
+		}
+
+
+	</script>
+
+</head>
+<body>
+
+
+	<form>
+		<center>
+		<br>
+		<label for="textbox"></label><input  id="textbox" type="text" name="texto" readonly>
+		<br>
+		<br>											<!-- Con la etiqueta onclick llamamos al esctipt incorporado en java-->
+		<label for="botonhora"></label><input id="botonhora" type="button" onclick='bucle();' name="boton" value="Mostrar">
+	</center>
+	</form>
+
+</body>
+</html>
