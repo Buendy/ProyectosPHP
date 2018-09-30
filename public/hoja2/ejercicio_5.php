@@ -17,5 +17,5 @@ if ($fecha < 32 ) {
 
 
 ?>
-
+<br>
 <a href="../index.php">Regresar al menú</a>
