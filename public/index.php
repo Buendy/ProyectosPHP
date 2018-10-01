@@ -34,7 +34,7 @@
 	</li>
 
 	<li>
-		<h3>Hoja número 2</h3>
+		<h3>Hoja número 3</h3>
 	<ul>
 		<li>Problema 1</li>
 		<li>Problema 2</li>
