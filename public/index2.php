@@ -16,8 +16,8 @@ if($numero == 100){ //condicional multiple
 		echo "<br>El número es mayor que 100";
 	}else {
 		echo "<br>El número es menor que 100";
-} 
-if($numero == 100){ ?>
+}
+if($numero == 100){?>
 <br>El numero es 100
 <?php } else if ($numero > 100) { ?>
 <br>El número es mayor que 100
@@ -31,3 +31,5 @@ if($numero == 100){ ?>
 $cadena ="Esto es una variable";
 echo "$cadena<br>";
 var_dump($cadena);
+
+phpinfo();

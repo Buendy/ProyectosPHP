@@ -29,17 +29,30 @@
 		<li><a href="/hoja2/ejercicio_7.php">Problema 7</a></li>
 		<li><a href="/hoja2/ejercicio_8.php">Problema 8</a></li>
 		<li><a href="/hoja2/ejercicio_9.php">Problema 9</a></li>
-	
+
 	</ul>
 	</li>
 
 	<li>
 		<h3>Hoja número 3</h3>
 	<ul>
-		<li>Problema 1</li>
+		<li><a href="/hoja3/ejercicio_1.php">Problema 1</a></li>
 		<li>Problema 2</li>
 		<li>Problema 3</li>
 		<li><a href="/hoja3/ejercicio_4.php">Problema 4</a></li>
+		<li>Problema 5</li>
+		<li>Problema 6</li>
+		<li>Problema 7</li>
+	</ul>
+	</li>
+
+	<li>
+		<h3>Hoja número 4</h3>
+	<ul>
+		<li>Problema 1</li>
+		<li>Problema 2</li>
+		<li>Problema 3</li>
+		<li><a href="/hoja4/ejercicio_4.php">Problema 4</a></li>
 		<li>Problema 5</li>
 		<li>Problema 6</li>
 		<li>Problema 7</li>
