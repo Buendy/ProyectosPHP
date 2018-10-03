@@ -3,7 +3,7 @@
 function factorial($numero){
 	$resultado = 1;
 
-for ($i=1; $i <= $numero; $i++) { 
+for ($i=1; $i <= $numero; $i++) {
 	$resultado *= $i;
 
 }
@@ -17,5 +17,5 @@ $solucion = factorial($m) / (factorial($n) * factorial($m-$n));
 echo 'El resultado es ' . $solucion . ' <br>';
 
 ?>
-
+<br>
 <a href="../index.php">Regresar al menú</a>

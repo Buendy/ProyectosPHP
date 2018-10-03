@@ -37,21 +37,21 @@
 		<h3>Hoja número 3</h3>
 	<ul>
 		<li><a href="/hoja3/ejercicio_1.php">Problema 1</a></li>
-		<li>Problema 2</li>
-		<li>Problema 3</li>
+		<li><a href="/hoja3/ejercicio_2.php">Problema 2</a></li>
+		<li><a href="/hoja3/ejercicio_3.html">Problema 3</a></li>
 		<li><a href="/hoja3/ejercicio_4.php">Problema 4</a></li>
-		<li>Problema 5</li>
-		<li>Problema 6</li>
-		<li>Problema 7</li>
+		<li><a href="/hoja3/ejercicio_5.php">Problema 5</a></li>
+		<li><a href="/hoja3/ejercicio_6.php">Problema 6</a></li>
+		<li><a href="/hoja3/ejercicio_7.php">Problema 7</a></li>
 	</ul>
 	</li>
 
 	<li>
 		<h3>Hoja número 4</h3>
 	<ul>
-		<li>Problema 1</li>
-		<li>Problema 2</li>
-		<li>Problema 3</li>
+		<li><a href="">Problema1</a></li>
+		<li><a href="">Problema2</a></li>
+		<li><a href="">Problema3</a></li>
 		<li><a href="/hoja4/ejercicio_4.php">Problema 4</a></li>
 		<li>Problema 5</li>
 		<li>Problema 6</li>
