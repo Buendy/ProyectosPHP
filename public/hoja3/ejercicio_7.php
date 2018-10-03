@@ -9,7 +9,6 @@ function comprobar($texto){
 $texto = strtolower(str_replace(" ","", $texto));
 $textoInvert = strrev($texto);
 
-
 echo $texto . '<br>';
 echo $textoInvert . '<br>';
 

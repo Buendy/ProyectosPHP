@@ -37,3 +37,5 @@ echo $cadena;
 
 //echo desencriptar($cadenaEncriptada, -1);
  ?>
+ <br>
+ <a href="../index.php">Regresar al menú</a>

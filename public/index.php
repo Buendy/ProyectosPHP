@@ -49,7 +49,7 @@
 	<li>
 		<h3>Hoja número 4</h3>
 	<ul>
-		<li><a href="">Problema1</a></li>
+		<li><a href="/hoja4/ejercicio_1.php">Problema1</a></li>
 		<li><a href="">Problema2</a></li>
 		<li><a href="">Problema3</a></li>
 		<li><a href="/hoja4/ejercicio_4.php">Problema 4</a></li>
