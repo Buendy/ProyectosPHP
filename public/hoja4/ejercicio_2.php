@@ -21,10 +21,10 @@ for ($i=0; $i <strlen($texto) ; $i++) {
 $solucion[i] = chr($letraNumerica);
 
 if($letraNumerica == 59){
-  $solucion[i] = chr(32);
+  $solucion[i] = chr(127);
 }
 if($letraNumerica == 96){
-  $solucion[i] = chr(44);
+  $solucion[i] = chr(127);
 }
 
 echo $solucion[i];
