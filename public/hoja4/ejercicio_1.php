@@ -10,7 +10,13 @@ $colucion = '';
 
 for ($i=0; $i <strlen($texto) ; $i++) {
 
+
   $letra = $texto[$i];
+
+  if($letra != strtoupper($letra)){
+    echo $solucion[$i];
+      continue;
+  }
   $letraNumerica = ord($letra) + $num;
 
   if($letraNumerica > 90){
@@ -18,16 +24,16 @@ for ($i=0; $i <strlen($texto) ; $i++) {
   }elseif($letraNumerica < 65){
     $letraNumerica = $letraNumerica + 26;
   }
-$solucion[i] = chr($letraNumerica);
+$solucion[$i] = chr($letraNumerica);
 
 if($letraNumerica == 59){
-  $solucion[i] = chr(32);
+  $solucion[$i] = chr(32);
 }
 if($letraNumerica == 96){
-  $solucion[i] = chr(44);
+  $solucion[$i] = chr(44);
 }
 
-echo $solucion[i];
+echo $solucion[$i];
 
 
 }

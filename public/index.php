@@ -67,5 +67,22 @@
 	</ul>
 	</li>
 
+	<li>
+		<h3>Tema 5</h3>
+	<ul>
+		<li><a href="/tema5/inicio.php">Ejemplo de login</a></li>
+		<li><a href="/tema5/cookie.php">Ejemplo de cookie</a></li>
+		<li><a href="/tema4/post.php">Ejemplo de uso de POST</a></li>
+
+	</ul>
+	</li>
+
+	<li>
+		<h3>Tema 5</h3>
+	<ul>
+		<li><a href="/tema6/index.php">Ejemplo de formulario</a></li>
+	</ul>
+	</li>
+
 
 </ul>
