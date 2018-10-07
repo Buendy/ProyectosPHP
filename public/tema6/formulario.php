@@ -1,6 +1,6 @@
 
 
-<form action="<? $_SERVER['PHP_SELF'] ?>" method="post">
+<form action="index.php" method="post">
 
   <p>
     <label for="nombre">Nombre</label>
@@ -12,8 +12,8 @@
   <p>
     <label for="email">Email</label>
     <input type="email" name="email"
-    <?php mostrar_campo('email');?>
-    >
+   <?php mostrar_campo('email');?>
+   >
     <?php mostrar_error_campo('email', $errores); ?>
   </p>
   <p>

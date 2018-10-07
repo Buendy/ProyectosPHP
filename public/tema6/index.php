@@ -17,10 +17,7 @@
 
       include('formulario.php');
 
-     } else {
-
-
-       //PROCESAMOS EL FORMULARIO
+     } else { //PROCESAMOS EL FORMULARIO
 
        if ( ! isset($_POST['nombre'])){
          $errores['nombre'] = 'No he recibido el nombre';
