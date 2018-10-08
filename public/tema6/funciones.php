@@ -20,7 +20,7 @@ function mostrar_campo($campo){
 function mostrar_error_campo($campo, $errores){
 
 if(isset($errores[$campo])){
-  echo '<span class="errorf">' . $errores[$campo] . '</span';
+  echo '<span class="listaErrores">' . $errores[$campo] . '</span';
 }
 
 }
