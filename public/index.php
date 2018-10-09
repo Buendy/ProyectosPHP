@@ -78,9 +78,17 @@
 	</li>
 
 	<li>
-		<h3>Tema 5</h3>
+		<h3>Tema 6</h3>
 	<ul>
 		<li><a href="/tema6/index.php">Ejemplo de formulario</a></li>
+	</ul>
+	</li>
+
+	<li>
+		<h3>Tema 8</h3>
+	<ul>
+		<li><a href="/tema8/trim.php">Ejemplo de trim()</a></li>
+		<li><a href="/tema8/html.php">Ejemplo de funciones de cadenas</a></li>
 	</ul>
 	</li>
 
