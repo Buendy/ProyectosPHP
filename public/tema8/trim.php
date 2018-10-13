@@ -15,6 +15,7 @@
           echo 'No es válido el nombre';
         } else {
           echo 'El nombre es válido';
+          echo 'El nombre es ' . $_POST['nombre'];
         }
       } else {
         echo 'No he recibido el nombre';

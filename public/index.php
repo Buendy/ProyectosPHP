@@ -98,7 +98,14 @@
 		<li><a href="/tema9/ejemplo1.php">Ejemplo 1</a></li>
 		<li><a href="/tema9/ejemplo2.php">Ejemplo 2</a></li>
 		<li><a href="/tema9/ejemplo3.php">Ejemplo 3 Citas médicas</a></li>
-		<li><a href="/tema9/ejemplo4.php">Ejemplo 4 Ver citas médicas</a></li>	
+		<li><a href="/tema9/ejemplo4.php">Ejemplo 4 Ver citas médicas</a></li>
+	</ul>
+	</li>
+
+	<li>
+		<h3>Formularios</h3>
+	<ul>
+		<li><a href="/formularios/form1/index.php">Ejemplo 1</a></li>
 	</ul>
 	</li>
 
