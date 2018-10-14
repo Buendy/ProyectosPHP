@@ -56,11 +56,11 @@
   </p>
 
   <p>
-    <label for="usuario">Tipo de usuario</label>
+    <label for="rol">Tipo de usuario</label>
   </p>
 
   <p>
-    <select class="usuario" name="usuario">
+    <select class="rol" name="rol">
       <option value="alumno">Alumno</option>
       <option value="Profesor">Profesor</option>
     </select>

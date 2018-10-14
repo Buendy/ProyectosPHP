@@ -1,23 +1,24 @@
 <?php
-
-$texto = "Daniel12";
-
-$in = preg_match_all("/[\d]/", $texto);
-
-echo $in;
+$_POST['email'] = 'smrr@gmail.com';
+$archivo = 'usuarios.txt';
 
 
- ?>
+$comprobar = comprobarEmail('email', $archivo);
 
- <p>
-   <label for="usuario">Tipo de usuario</label>
- </p>
 
- <p>
-   <select class="usuario" name="usuario">
-     <option value="alumno">Alumno</option>
-     <option value="Profesor">Profesor</option>
-   </select>
- </p>
+function comprobarContraseña($campo, $archivo){
+  $array = file($archivo);
 
- "<?= $_SERVER['PHP_SELF']?>"
+  foreach ($array as $value) {
+    $datos = explode(' : ', $value);
+    echo $datos[5] . '<br>';
+    if($datos[5] == $_POST[$campo]){
+      return true;
+    }
+  }
+ return false;
+}
+
+
+
+?>
