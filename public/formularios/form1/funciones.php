@@ -133,8 +133,8 @@ function comprobarEmail($campo, $archivo){
 
   foreach ($array as $value) {
     $datos = explode(' : ', $value);
-    if(isset($datos[2] )){
-      if($datos[2] == $_POST[$campo]){
+    if(isset($datos[3] )){
+      if($datos[3] == $_POST[$campo]){
       return true;
       }
     }
@@ -144,19 +144,14 @@ function comprobarEmail($campo, $archivo){
 
 function comprobarPassword($campo1, $campo2, $archivo){
   $array = file($archivo);
-  $_POST[$campo2] = md5($_POST[$campo2]);
-
   foreach ($array as $value) {
     $datos = explode(' : ', $value);
-    if(isset($datos[2])){
-      if($datos[2] == $_POST[$campo1]){
-        echo $_POST[$campo2] . '<br>';
-        if(isset($datos[5])){
-          if($datos[5] == $_POST[$campo2]){
+    if(isset($datos[3])){
 
+      if($datos[3] == $_POST[$campo1]){
+        if($datos[0] == $_POST[$campo2]){
             return true;
           }
-        }
 
       }
     }

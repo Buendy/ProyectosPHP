@@ -13,5 +13,8 @@
     <p class="centrado">
       <a href="login.php">Iniciar sesión</a>
     </p>
+    <p class="centrado">
+      <a href="cursos.php">Cursos</a>
+    </p>
   </body>
 </html>

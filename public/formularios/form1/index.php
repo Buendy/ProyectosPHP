@@ -9,6 +9,13 @@
 
     <?php
     $errores = [];
+    session_start();
+    if(isset($_SESSION['user']['name'])){
+      echo 'Ya estás logueado como: ' . $_SESSION['user']['name'] . '<br>';
+      echo '<a href="public.php">Volver a la página principal</a><br>';
+      echo '<a href="logout.php">Cerrar sesión</a><br>';
+
+    }else{
 
     if (!$_POST) {
 
@@ -29,8 +36,9 @@
         $fuente = fopen($archivo, "a+");
 
         if(is_writable($archivo)){
-          $usuario = $_POST['nombre'] . ' : ' . $_POST['apellidos'] . ' : ' . $_POST['email'] . ' : ' . $_POST['telefono'] . ' : ' . $_POST['rol'] .
-                ' : ' . md5($_POST['clave1'] . '\n');
+
+          $usuario = md5($_POST['clave1']) . ' : ' . $_POST['nombre'] . ' : ' . $_POST['apellidos']
+                  . ' : ' . $_POST['email'] . ' : ' . $_POST['telefono'] . ' : ' . $_POST['rol'];
           fwrite($fuente, "$usuario\n");
           fclose($fuente);
         } else {
@@ -41,6 +49,8 @@
       }
 
     }
+
+  }
 
 
      ?>
