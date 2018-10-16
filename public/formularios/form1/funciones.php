@@ -110,11 +110,11 @@ function validaPass($campo1, $campo2){
 if(isset($_POST[$campo1]) || isset($_POST[$campo2])){
   $_POST[$campo1] = formateaCampo($campo1);
 
-    if(strlen($_POST['clave1']) < 8){
+    if(strlen($_POST[$campo2]) < 8){
       return 'La contraseña debe de tener al menos 8 caracteres';
-    }elseif(preg_match("/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/", $campo1)){
+    }elseif(preg_match("/^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/", $campo1)){
     return 'El formato no es correcto, Debe tener 1 minúscula, 1 mayúscula y 1 número';
-  }elseif($_POST['clave1'] != $_POST['clave2']){
+  }elseif($_POST[$campo1] != $_POST[$campo2]){
     return 'Las contraseñas no coinciden';
   } else {
       return null;
