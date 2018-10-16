@@ -3,7 +3,7 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Formulario</title>
+    <title>Formulario</title
   </head>
   <body>
 

@@ -103,6 +103,14 @@
 	</li>
 
 	<li>
+		<h3>Tema 11 POO</h3>
+	<ul>
+		<li><a href="/tema11/ejemplo1.php">Ejemplo 1. Clase Freelance</a></li>
+		<li><a href="/tema11/ejemplo2.php">Ejemplo 2. Migas de pan</a></li>
+	</ul>
+	</li>
+
+	<li>
 		<h3>Formularios</h3>
 	<ul>
 		<li><a href="/formularios/form1/public.php">Ejemplo 1</a></li>
