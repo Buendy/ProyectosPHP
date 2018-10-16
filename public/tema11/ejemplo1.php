@@ -18,7 +18,7 @@ class Freelance
 
   public function desarrollar()
   {
-    echo "<br>Soy " . $this->nombre . " y comienzo a trabajar";
+    echo "<br>Soy " . $this->nombre . " y comienzo a trabajar<br>";
     echo "Uso los caracteres " . self::$juegoCaracteres;
     $this->ocupado = true;
     $this->comienzoTrabajo = time();
@@ -31,8 +31,9 @@ class Freelance
     echo "Terminé de trabajar. facturo " . $horasTrabajadas * $this->$precioHora;
   }
 
-  public function __destruct
+  public function __destruct()
   {
+    echo "<br>";
     echo "Soy " . $this->nombre;
     echo "<br>Y dejo de trabajar. Adios!!!";
   }
@@ -40,7 +41,7 @@ class Freelance
   public static function diasTrabajo()
   {
     if($invierno) {
-      return ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado']:
+      return ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
     }
     return ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'];
   }
