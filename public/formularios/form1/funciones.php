@@ -82,7 +82,8 @@ function validaTelefono($campo){
 }
 
 
-
+//!preg_match_all('/^[a-zA-Z\d-_*\.]+@[a-zA-Z\d-_*\.]+\.[a-zA-Z\d]{2,}$/', $_POST[$campo])
+//!filter_var($_POST[$campo], FILTER_VALIDATE_EMAIL)
 
 function validaEmail($campo){ //Se valida el email para que tenga el formato correcto
 
@@ -110,18 +111,18 @@ function validaPass($campo1, $campo2){
 if(isset($_POST[$campo1]) || isset($_POST[$campo2])){
   $_POST[$campo1] = formateaCampo($campo1);
 
-    if(strlen($_POST[$campo2]) < 8){
-      return 'La contraseña debe de tener al menos 8 caracteres';
-    }elseif(preg_match("/^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/", $campo1)){
-    return 'El formato no es correcto, Debe tener 1 minúscula, 1 mayúscula y 1 número';
-  }elseif($_POST[$campo1] != $_POST[$campo2]){
-    return 'Las contraseñas no coinciden';
-  } else {
-      return null;
-    }
+  if(strlen($_POST[$campo1]) < 8){
+    return 'La contraseña debe de tener al menos 8 caracteres';
 
-  } else {
-    return 'No he recibido ambas claves';
+  }elseif(!preg_match_all("/(?=.*[A-Z])(?=.*\d)(?=.*[a-z])/", $_POST[$campo1])){
+      return 'El formato no es correcto, Debe tener 1 minúscula, 1 mayúscula y 1 número';
+      }elseif($_POST[$campo1] != $_POST[$campo2]){
+        return 'Las contraseñas no coinciden';
+        } else {
+          return null;
+          }
+    } else {
+          return 'No he recibido ambas claves';
   }
 
 }

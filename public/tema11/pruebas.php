@@ -1,8 +1,9 @@
 <?php
-include('ejemplo1.php');
+include('select.php');
 
-$empleado1 = new Freelance('Daniel', 50);
-$empleado1->desarrollar();
+$select1 = new Select('ESPAÑA', 'ESPAÑA');
+$select2 = new Select('FRANCIA', 'FRANCIA');
+
 
 
  ?>
@@ -14,6 +15,11 @@ $empleado1->desarrollar();
     <title></title>
   </head>
   <body>
+    <select class="slect" name="slect">
+      <?= $select1-> imprimete(); ?>
+      <?= $select2-> imprimete(); ?>
+
+    </select>
 
   </body>
 </html>
