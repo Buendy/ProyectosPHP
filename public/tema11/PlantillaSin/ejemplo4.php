@@ -1,8 +1,5 @@
 <?php
-
 include('Plantilla.php');
-include('PlantillaHtml.php');
-
 
 $html = '<!DOCTYPE html>
 <html lang="es"
@@ -20,7 +17,7 @@ $html = '<!DOCTYPE html>
 
 $diccionario = ["nombre" => "Pepe", "animo" => "cachondo", "ciudad" => "Murcia"];
 
-$plantilla = new PlantillaHtml($html);
+$plantilla = new Plantilla($html);
 $plantilla->renderData($diccionario);
 
 

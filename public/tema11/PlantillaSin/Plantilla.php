@@ -1,10 +1,10 @@
 <?php
 
 
-abstract class Plantilla
+class plantilla
 {
   private $html;
-  protected $htmlGenerado;
+  private $htmlGenerado;
 
   public function __construct($html)
   {
@@ -21,9 +21,10 @@ abstract class Plantilla
     }
   }
 
-
-
-  protected abstract function render();
+  private function render()
+  {
+    echo $this->htmlGenerado;
+  }
 
   public function renderData($diccionario)
   {
