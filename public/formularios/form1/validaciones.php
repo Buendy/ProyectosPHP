@@ -45,8 +45,19 @@
     $value = validaPass('clave1', 'clave2');
     if($value){
       $errores['clave'] = $value;
-    }    
+    }
 
   }
+
+  if(!isset($_POST['dni'])){
+    $errores['dni'] = 'No he recibido el email';
+  } else {
+    $value = validaDni('dni');
+    if($value){
+      $errores['dni'] = $value;
+    }
+  }
+
+
 
  ?>

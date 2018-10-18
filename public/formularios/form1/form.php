@@ -56,6 +56,14 @@
   </p>
 
   <p>
+    <label for="dni">DNI</label>
+  </p>
+
+  <p>
+    <input type="text" name="dni" <?= mostrarCampo('dni') ?> > <?= mostrarErrorCampo('dni', $errores); ?>
+  </p>
+
+  <p>
     <label for="rol">Tipo de usuario</label>
   </p>
 

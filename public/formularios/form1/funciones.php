@@ -93,8 +93,8 @@ function validaEmail($campo){ //Se valida el email para que tenga el formato cor
       return 'El email es demasiado corto';
     }elseif(!preg_match_all('/^[a-zA-Z\d-_*\.]+@[a-zA-Z\d-_*\.]+\.[a-zA-Z\d]{2,}$/', $_POST[$campo])){
       return 'El email no es correcto';
-    }elseif(comprobarEmail($campo, 'usuarios.txt')){
-      return 'El eamil ya está registrado';
+    }elseif(comprobarRepeticion($campo, 'usuarios.txt')){
+      return 'El email ya está registrado';
     }else {
       return null;
     }
@@ -128,6 +128,17 @@ if(isset($_POST[$campo1]) || isset($_POST[$campo2])){
 }
 
 
+function validaDni($campo){
+  if(strlen($_POST[$campo]) < 9 || strlen($_POST[$campo]) > 9){
+    return 'El DNI no es correcto';
+  }elseif(!preg_match_all("/^[\d]{8}[]/")){
+
+  } else {
+    return null;
+  }
+}
+
+
 
 function comprobarEmail($campo, $archivo){
   $array = file($archivo);
@@ -142,6 +153,25 @@ function comprobarEmail($campo, $archivo){
   }
  return false;
 }
+
+function comprobarRepeticion($campo, $archivo){
+  $array = file($archivo);
+
+  foreach ($array as $value) {
+    $datos = explode(' : ', $value);
+    foreach ($datos as $value) {
+      if(isset($datos)){
+        if($value == $_POST[$campo]){
+        return true;
+        }
+      }
+    }
+
+  }
+ return false;
+
+}
+
 
 function comprobarPassword($campo1, $campo2, $archivo){
   $array = file($archivo);
