@@ -131,12 +131,34 @@ if(isset($_POST[$campo1]) || isset($_POST[$campo2])){
 function validaDni($campo){
   if(strlen($_POST[$campo]) < 9 || strlen($_POST[$campo]) > 9){
     return 'El DNI no es correcto';
-  }elseif(!preg_match_all("/^[\d]{8}[]/")){
-
+  }elseif(!preg_match_all("/^[\d]{8}[TRWAGMYFPDXBNJZSQVHLCKET]{1}/", $_POST[$campo])){
+    return 'EL formato del DNI no es correcto';
+  }elseif(compruebaDni($_POST[$campo])){
+    return 'El DNI no es correcto';
   } else {
     return null;
   }
 }
+
+
+function compruebaDni($campo){
+  $letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X',
+    'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+  $letra = substr($campo, -1);
+  $numeros =substr($campo, 0, -1);
+  
+  $resto = $numeros%23;
+  $letraCalculada=$letras[$resto];
+
+  if($letra == $letraCalculada){
+    return false;
+  }else{
+    return true;
+  }
+
+  }
+
 
 
 
