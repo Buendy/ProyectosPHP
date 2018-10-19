@@ -3,6 +3,9 @@ spl_autoload_register(function($clave){
   $archivo = $clave . '.php';
   include $archivo;
 });
+
+session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +48,10 @@ spl_autoload_register(function($clave){
     $carrito->mostrar();
 
      ?>
+     <br><br>
+     <p>
+       <a href="destroy.php">Eliminar sesión</a>
+     </p>
 
   </body>
 </html>
