@@ -1,5 +1,9 @@
-<?php include('Carrito.php');?>
-
+<?php
+spl_autoload_register(function($clave){
+  $archivo = $clave . '.php';
+  include $archivo;
+});
+?>
 
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -9,6 +13,7 @@
     <link rel="stylesheet" href="estilo.css">
   </head>
   <body>
+
     <?php
     $p1 = new Producto("Espuma de afeitar", 3.5);
     $p2 = new Producto("Cereales de chocolate", 5.99);
