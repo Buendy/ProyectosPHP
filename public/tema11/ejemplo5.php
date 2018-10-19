@@ -33,9 +33,9 @@
     $p5 = new Producto("Terjeta de memoria 8GB", 12);
     $p6 = new Producto("Mini Trípode", 5);
 
-    $pack1 = new Pack($p4, $p5, $p6);
+    $pack1 = new Pack([$p4, $p5, $p6]);
     $carrito->meter($pack1);
-  
+
 
     $carrito->mostrar();
 
