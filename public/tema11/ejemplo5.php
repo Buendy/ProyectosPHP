@@ -25,6 +25,18 @@
     $carrito->menosUnidad(2);
     $carrito->menosUnidad(2);
 
+    $d1 = new Descuento("Código XDD12233", 2);
+
+    $carrito->meter($d1);
+
+    $p4 = new Producto("Cámara Canon x2", 96);
+    $p5 = new Producto("Terjeta de memoria 8GB", 12);
+    $p6 = new Producto("Mini Trípode", 5);
+
+    $pack1 = new Pack($p4, $p5, $p6);
+    $carrito->meter($pack1);
+  
+
     $carrito->mostrar();
 
      ?>
