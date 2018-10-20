@@ -147,7 +147,7 @@ function compruebaDni($campo){
 
   $letra = substr($campo, -1);
   $numeros =substr($campo, 0, -1);
-  
+
   $resto = $numeros%23;
   $letraCalculada=$letras[$resto];
 
@@ -161,7 +161,7 @@ function compruebaDni($campo){
 
 
 
-
+/*
 function comprobarEmail($campo, $archivo){
   $array = file($archivo);
 
@@ -174,7 +174,7 @@ function comprobarEmail($campo, $archivo){
     }
   }
  return false;
-}
+}*/
 
 function comprobarRepeticion($campo, $archivo){
   $array = file($archivo);
