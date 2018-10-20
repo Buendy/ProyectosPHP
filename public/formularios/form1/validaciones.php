@@ -1,5 +1,13 @@
 <?php
 
+  if(!isset($_POST['nick'])){
+    $errores['nick'] = 'No he recibido el nick';
+  }else{
+    $value = validaNick('nick');
+    if($value){
+      $errores['nick'] = $value;
+    }
+  }
 
   if (!isset($_POST['nombre'])){
     $errores['nombre'] = 'No he recibido el nombre<br>';
@@ -56,6 +64,17 @@
     if($value){
       $errores['dni'] = $value;
     }
+  }
+
+  if(!isset($_POST['rol'])){
+    $errores['rol'] = 'No he recibido el tipo de usuario';
+  }else{
+
+    $value = validaRol('rol');
+    if($value){
+      $errores['rol'] = $value;
+    }
+
   }
 
 

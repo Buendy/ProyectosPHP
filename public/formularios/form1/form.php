@@ -4,6 +4,13 @@
 
 <form class="formulario" action="<?= $_SERVER['PHP_SELF']?>" method="post">
 
+  <p>
+    <label for="nick">Nick</label>
+  </p>
+
+  <p>
+    <input type="text" name="nick" <?= mostrarCampo('nick') ?> > <?= mostrarErrorCampo('nick', $errores); ?>
+  </p>
 
   <p>
     <label for="nombre">Nombre</label>
@@ -70,8 +77,8 @@
   <p>
     <select class="rol" name="rol">
       <option value="alumno">Alumno</option>
-      <option value="Profesor">Profesor</option>
-    </select>
+      <option value="profesor">Profesor</option>
+    </select> <?= mostrarErrorCampo('rol', $errores); ?>
   </p>
 
 

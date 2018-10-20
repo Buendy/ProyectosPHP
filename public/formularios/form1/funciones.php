@@ -15,6 +15,24 @@ function mostrarCampo($campo){
 }
 
 
+function validaNick($campo){
+  if(isset($_POST['nombre'])){
+    $_POST[$campo] = formateaCampo($campo);
+
+    if(strlen($_POST[$campo]) > 10 || strlen($_POST[$campo]) < 4  ){
+      return 'El nick debe tener entre 4 y 10 caracteres';
+    }elseif(preg_match("/[^a-zA-Z'áéíóúàèìòùäëïöüÁÉÍÓÚÀÈÌÒÙÄËÏÖÜ_\d]/", $_POST[$campo])){
+      return 'El nick solo puede contener letras, -_\' y algún número';
+    }else {
+      return null;
+    }
+
+  }else {
+    return 'No he recibido el nick';
+  }
+}
+
+
 
 function validaNombre($campo){
 
@@ -70,7 +88,7 @@ function validaTelefono($campo){
 
     if(strlen($_POST[$campo]) < 9 || strlen($_POST[$campo]) > 9  ){
       return 'El número de teléfono introducido no es correcto';
-    }elseif(preg_match("/[^\d]/", $_POST[$campo])){
+    }elseif(!preg_match('/^[8|9|6|7][\d]{8}$/', $_POST[$campo])){
       return 'El número introducido no es correcto';
     } else {
       return null;
@@ -110,6 +128,7 @@ function validaPass($campo1, $campo2){
 
 if(isset($_POST[$campo1]) || isset($_POST[$campo2])){
   $_POST[$campo1] = formateaCampo($campo1);
+  $_POST[$campo2] = formateaCampo($campo2);
 
   if(strlen($_POST[$campo1]) < 8){
     return 'La contraseña debe de tener al menos 8 caracteres';
@@ -141,6 +160,8 @@ function validaDni($campo){
 }
 
 
+
+
 function compruebaDni($campo){
   $letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X',
     'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
@@ -159,6 +180,21 @@ function compruebaDni($campo){
 
   }
 
+function validaRol($campo){
+
+  if(isset($_POST[$campo])){
+    if($_POST[$campo] != 'alumno'){
+      if($_POST[$campo] != 'profesor'){
+        return 'El tipo de usuario no es correcto';
+      }
+    }else{
+      return null;
+    }
+
+  }else{
+    return 'No he recibido el tipo de usuario';
+  }
+}
 
 
 /*

@@ -50,6 +50,8 @@ session_start();
     echo $p1;
     echo $p2;
     echo $p3;
+    echo $p1->mostrar();
+
 
      ?>
      <br><br>

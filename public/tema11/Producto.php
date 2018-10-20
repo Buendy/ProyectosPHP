@@ -2,6 +2,7 @@
 
 class Producto implements iEnCarrito
 {
+  
   private $nombre;
   private $precio;
   private $iva;
@@ -34,7 +35,7 @@ class Producto implements iEnCarrito
   }
 
 
-  public function masUnidad($unidades = 1)
+public function masUnidad($unidades = 1)
   {
     $this->cantidad += $unidades;
   }
