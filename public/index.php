@@ -109,6 +109,7 @@
 		<li><a href="/tema11/ejemplo2.php">Ejemplo 2. Migas de pan</a></li>
 		<li><a href="/tema11/ejemplo3.php">Ejemplo 3. Herencia migas de pan</a></li>
 		<li><a href="/tema11/ejemplo4.php">Ejemplo 4. Clases abstractas. Renderizar plantillas</a></li>
+			<li><a href="/tema11/ejemplo5.php">Ejemplo 5. Carrito de la compra</a></li>
 	</ul>
 	</li>
 
