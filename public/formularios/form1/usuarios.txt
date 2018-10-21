@@ -5,3 +5,6 @@ b3ea255fb306b859f2571a265e8d03af : Daniel : Buendia : robert@gmail.com : 6181522
 0fd800451119ea50ad21e9da6bc9aac3 : Daniel : Buendia : ejeje@gmail.com : 618152226 : alumno
 f645de4cd8e36c99438faf1d2d640fe9 : Dnaiel : Buendia : smrr@gmail.com : 618152226 : alumno
 f645de4cd8e36c99438faf1d2d640fe9 : Dnaiel : Buendia : smrmr@gmail.com : 618152226 : Prueba
+f645de4cd8e36c99438faf1d2d640fe9 : Daniel : buendia : sm-r@gmail.com : 618152226 : alumno : Buendy : 48635162Y
+f645de4cd8e36c99438faf1d2d640fe9 : Daniel : buendia : buendy13@hotmail.com : 618152226 : alumno : Bondy : 48635162Y
+f645de4cd8e36c99438faf1d2d640fe9 : Daniel : Buendia : gmail@gmail.com : 618152226 : alumno : Bondy13 : 48635162Y

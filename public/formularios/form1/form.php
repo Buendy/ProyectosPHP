@@ -2,7 +2,7 @@
 
 
 
-<form class="formulario" action="<?= $_SERVER['PHP_SELF']?>" method="post">
+<form class="formulario" action="<?= $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
 
   <p>
     <label for="nick">Nick</label>
@@ -79,6 +79,15 @@
       <option value="alumno">Alumno</option>
       <option value="profesor">Profesor</option>
     </select> <?= mostrarErrorCampo('rol', $errores); ?>
+  </p>
+
+  <p>
+    <label for="archivo">Subir una imagen</label>
+  </p>
+
+  <p>
+    <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
+    <input type="file" name="archivo"><?= mostrarErrorCampo('archivo', $errores); ?>
   </p>
 
 

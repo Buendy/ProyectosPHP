@@ -30,7 +30,7 @@
       if($errores) {
         include('form.php');
       } else {
-        echo 'Todo correcto, registro completado';
+
 
         $archivo = 'usuarios.txt';
         $fuente = fopen($archivo, "a+");
@@ -38,9 +38,17 @@
         if(is_writable($archivo)){
 
           $usuario = md5($_POST['clave1']) . ' : ' . $_POST['nombre'] . ' : ' . $_POST['apellidos']
-                  . ' : ' . $_POST['email'] . ' : ' . $_POST['telefono'] . ' : ' . $_POST['rol'];
+                  . ' : ' . $_POST['email'] . ' : ' . $_POST['telefono'] . ' : ' . $_POST['rol'] . ' : ' . $_POST['nick'] . ' : ' . $_POST['dni'];
           fwrite($fuente, "$usuario\n");
           fclose($fuente);
+          echo 'Todo correcto, registro completado';
+
+
+          $destino = $carpeta . $_FILES['archivo']['name'];
+          if(!move_uploaded_file($_FILES['archivo']['tmp_name'], $destino)) {
+            echo 'Fallo al cargar el archivo';
+          }
+
         } else {
           echo 'los datos introducidos no son correctos<br>';
         }

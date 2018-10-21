@@ -23,6 +23,8 @@ function validaNick($campo){
       return 'El nick debe tener entre 4 y 10 caracteres';
     }elseif(preg_match("/[^a-zA-Z'áéíóúàèìòùäëïöüÁÉÍÓÚÀÈÌÒÙÄËÏÖÜ_\d]/", $_POST[$campo])){
       return 'El nick solo puede contener letras, -_\' y algún número';
+    }elseif(comprobarRepeticion($campo, 'usuarios.txt')){
+      return 'El nick ya está registrado';
     }else {
       return null;
     }

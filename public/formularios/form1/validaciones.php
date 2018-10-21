@@ -1,5 +1,8 @@
 <?php
 
+$tam_max = 2 * 1024 * 1024; //declaramos como tam maximo 2 MB
+$carpeta = "./uploads/";
+
   if(!isset($_POST['nick'])){
     $errores['nick'] = 'No he recibido el nick';
   }else{
@@ -76,6 +79,22 @@
     }
 
   }
+
+
+  if(!isset($_FILES['archivo'])) {
+    $errores['archivo'] = "No estoy recibiendo el archivo";
+
+  }elseif($_FILES['archivo']['size'] == 0) {
+    $errores['archivo'] = 'El archivo no ha llegado correctamente';
+  }elseif($_FILES['archivo']['size'] > $tam_max){
+    $errores['archivo'] = "El archivo no puede superar $tam_max bytes";
+  }elseif($_FILES['archivo']['type'] != 'image/jpeg') {
+    $errores['archivo'] = 'No se permiten archivos diferentes de jpg';
+  }
+
+  
+
+
 
 
 
