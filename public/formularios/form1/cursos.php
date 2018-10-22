@@ -5,6 +5,7 @@
     <title></title>
   </head>
   <body>
+    <img src="">
 
     <?php
 
@@ -13,6 +14,7 @@
       echo 'Ya estás logueado como: ' . $_SESSION['user']['name'] . '<br>';
       echo '<a href="public.php">Volver a la página principal</a><br>';
       echo '<a href="logout.php">Cerrar sesión</a><br>';
+
 
     }else{
 

@@ -8,3 +8,5 @@ f645de4cd8e36c99438faf1d2d640fe9 : Dnaiel : Buendia : smrmr@gmail.com : 61815222
 f645de4cd8e36c99438faf1d2d640fe9 : Daniel : buendia : sm-r@gmail.com : 618152226 : alumno : Buendy : 48635162Y
 f645de4cd8e36c99438faf1d2d640fe9 : Daniel : buendia : buendy13@hotmail.com : 618152226 : alumno : Bondy : 48635162Y
 f645de4cd8e36c99438faf1d2d640fe9 : Daniel : Buendia : gmail@gmail.com : 618152226 : alumno : Bondy13 : 48635162Y
+f645de4cd8e36c99438faf1d2d640fe9 : Daniel : Buendia : smrgg@gmail.com : 618152226 : alumno : Danini : 48635162Y : ./uploads/smrgg@gmail.com
+f645de4cd8e36c99438faf1d2d640fe9 : Roberto : Gomez : roberttt@gmail.com : 618152226 : alumno : Robertikoh : 48635162Y : ./uploads/roberttt@gmail.com.jpg

@@ -23,7 +23,7 @@ if($errores) {
   include('formLogin.php');
 } else {
   echo 'Correcto, has iniciado sesión <br>';
-
+  
   $_SESSION['user']['name'] = $_POST['correo'];
   echo '<a href="public.php">Volver a la página principal</a><br>';
   echo '<a href="logout.php">Cerrar sesión</a><br>';

@@ -83,7 +83,6 @@ $carpeta = "./uploads/";
 
   if(!isset($_FILES['archivo'])) {
     $errores['archivo'] = "No estoy recibiendo el archivo";
-
   }elseif($_FILES['archivo']['size'] == 0) {
     $errores['archivo'] = 'El archivo no ha llegado correctamente';
   }elseif($_FILES['archivo']['size'] > $tam_max){
@@ -92,7 +91,7 @@ $carpeta = "./uploads/";
     $errores['archivo'] = 'No se permiten archivos diferentes de jpg';
   }
 
-  
+
 
 
 
