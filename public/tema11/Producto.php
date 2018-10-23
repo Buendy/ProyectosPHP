@@ -2,7 +2,8 @@
 
 class Producto implements iEnCarrito
 {
-  
+  use MasMenos;
+  use EnlaceComprar;
   private $nombre;
   private $precio;
   private $iva;
@@ -57,7 +58,7 @@ public function masUnidad($unidades = 1)
   public function __toString()
   {
     $salida = "<br>" . $this->nombre . " " . $this->precio . " &euro;";
-    $salida .= "<a href=\"?accion=comprar&producto=" . urlencode(serialize($this)) ."\">Comprar</a>";
+    $salida .= $this->enlaceComprar();
     return $salida;
   }
 
