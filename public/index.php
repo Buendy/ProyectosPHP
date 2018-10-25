@@ -113,6 +113,14 @@
 	</ul>
 	</li>
 
+
+	<li>
+		<h3>Tema 12 PDO</h3>
+	<ul>
+		<li><a href="/tema12/ejemplo1.php">Ejemplo 1. Ejemplo de conexión a la base de datos</a></li>
+	</ul>
+	</li>
+
 	<li>
 		<h3>Formularios</h3>
 	<ul>
