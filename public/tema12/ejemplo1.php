@@ -20,7 +20,8 @@ try {
   echo "Error en la conexión: " . $e->getMessage();
 }
 
-$query = $connection->query("SELECT * FROM users");
+$query = $connection->query("SELECT * FROM users WHERE id=1");
+
 
 while ($row = $query->fetch(PDO::FETCH_OBJ)){
   echo '<pre>';
@@ -28,11 +29,9 @@ while ($row = $query->fetch(PDO::FETCH_OBJ)){
 }
 
 
-$query2 = $connection->query("SELECT * FROM users");
+$query2 = $connection->query("SELECT * FROM users WHERE id=1");
 $resultado = $query2->fetchAll();
 echo '<pre>';
 print_r($resultado);
-
-echo $resultado[1][2];
 
  ?>
