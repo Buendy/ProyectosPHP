@@ -34,4 +34,10 @@ $resultado = $query2->fetchAll();
 echo '<pre>';
 print_r($resultado);
 
+
+
+
+
+
+
  ?>
