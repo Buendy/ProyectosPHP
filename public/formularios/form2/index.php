@@ -24,7 +24,7 @@
 
 
     } else {
-
+    
       include('validaciones.php');
 
       if($errores) {

@@ -45,12 +45,27 @@ $datos = ['nombre'   => 'Me quieroMORIR', 'email' => 'muerte@php.es', 'password'
 
 // ESTO ES EL delete
 
-$clave_dato = ['id' => 7];
+// $clave_dato = ['id' => 7];
+//
+// try{
+//   $usuario->delete($clave_dato);
+// }catch (Exception $e){
+//   echo '<h1>ERROR: ' . $e->getMessage() . '</h1>';
+// }
+
+//PROBAMOS EL MOETODO GETID
+//print_r($usuario->getID(2));
+
+
+//PROBAMOS LAS TRANSACCIONES
 
 try{
-  $usuario->delete($clave_dato);
-}catch (Exception $e){
-  echo '<h1>ERROR: ' . $e->getMessage() . '</h1>';
+  $usuario->setTransaction();
+  $usuario->insert($datos);
+  $usuario->endTransaction();
+}catch (Exceprion $e){
+  $usuario->cancelTransaction();
+  echo '<p>ERROR: ' . $e->getMessage() . '</p>';
 }
 
  ?>

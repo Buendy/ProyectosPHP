@@ -3,6 +3,7 @@
 $tam_max = 2 * 1024 * 1024; //declaramos como tam maximo 2 MB
 $carpeta = "./uploads/";
 include('Validacion.php');
+  include('Usuario.php');
 $validaciones = new Validacion();
 
   if(!isset($_POST['nick'])){
@@ -50,6 +51,10 @@ $validaciones = new Validacion();
     $errores['email'] = 'El he recibido el email<br>';
   } else{
     Validacion::formateaDatos('email');
+
+    $db = new DBpdo();
+    print_r($db->userEmail('email'));
+    exit;
     $value = $validaciones->validaEmail('email');
     if($value){
     $errores['email'] = $value;

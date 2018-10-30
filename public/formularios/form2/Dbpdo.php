@@ -103,6 +103,14 @@ public function all($limit = 10)
   return $prepare->fetchall(PDO::FETCH_ASSOC);
 }
 
+public function userEmail($campo)
+{
+  $prepare = $this->db->prepare('SELECT * FROM usuarios WHERE email=' . $_POST[$campo] );
+  $prepare->execute();
+  $this->setQuery($prepare);
+
+  return $prepare->fetchall(PDO::FETCH_ASSOC);
+}
 
 
 public function insert($params)
