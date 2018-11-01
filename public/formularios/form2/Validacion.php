@@ -4,18 +4,18 @@
 class Validacion
 {
 
+  private $tam_max = 2 * 1024 * 1024; //declaramos como tam maximo 2 MB
+  private $carpeta = "./uploads/";
 
 
 
   public function validaNick($campo){
     if(isset($_POST['nombre'])){
-    
+
       if(strlen($_POST[$campo]) > 10 || strlen($_POST[$campo]) < 4  ){
         return 'El nick debe tener entre 4 y 10 caracteres';
       }elseif(preg_match("/[^a-zA-Z'áéíóúàèìòùäëïöüÁÉÍÓÚÀÈÌÒÙÄËÏÖÜ_\d]/", $_POST[$campo])){
         return 'El nick solo puede contener letras, -_\' y algún número';
-      }elseif(comprobarRepeticion($campo, 'usuarios.txt')){
-        return 'El nick ya está registrado';
       }else {
         return null;
       }
@@ -90,8 +90,6 @@ class Validacion
         return 'El email es demasiado corto';
       }elseif(!preg_match_all('/^[a-zA-Z\d-_*\.]+@[a-zA-Z\d-_*\.]+\.[a-zA-Z\d]{2,}$/', $_POST[$campo])){
         return 'El email no es correcto';
-      }elseif(comprobarRepeticion($campo, 'usuarios.txt')){
-        return 'El email ya está registrado';
       }else {
         return null;
       }
@@ -174,42 +172,58 @@ class Validacion
 
 
 
-    public function comprobarRepeticion($campo, $archivo){
-      $array = file($archivo);
+    // public function comprobarRepeticion($campo, $archivo){
+    //   $array = file($archivo);
+    //
+    //   foreach ($array as $value) {
+    //     $datos = explode(' : ', $value);
+    //     foreach ($datos as $value) {
+    //       if(isset($datos)){
+    //         if($value == $_POST[$campo]){
+    //         return true;
+    //         }
+    //       }
+    //     }
+    //
+    //   }
+    //  return false;
+    //
+    // }
+    //
+    //
+    // public function comprobarPassword($campo1, $campo2, $archivo){
+    //   $array = file($archivo);
+    //   foreach ($array as $value) {
+    //     $datos = explode(' : ', $value);
+    //     if(isset($datos[3])){
+    //
+    //       if($datos[3] == $_POST[$campo1]){
+    //         if($datos[0] == $_POST[$campo2]){
+    //             return true;
+    //           }
+    //
+    //       }
+    //     }
+    //   }
+    //  return false;
+    // }
 
-      foreach ($array as $value) {
-        $datos = explode(' : ', $value);
-        foreach ($datos as $value) {
-          if(isset($datos)){
-            if($value == $_POST[$campo]){
-            return true;
-            }
-          }
-        }
 
+    public function validaArchivo($campo){
+      if(isset($_FILES[$campo])){
+
+      if($_FILES['archivo']['size'] == 0) {
+        return 'El archivo no ha llegado correctamente';
+      }elseif($_FILES['archivo']['size'] > $this->tam_max){
+        return "El archivo no puede superar $this->tam_max bytes";
+      }elseif($_FILES['archivo']['type'] != 'image/jpeg') {
+        return 'No se permiten archivos diferentes de jpg';
       }
-     return false;
-
+    }else {
+      return 'No he recibido el archivo';
     }
 
-
-    public function comprobarPassword($campo1, $campo2, $archivo){
-      $array = file($archivo);
-      foreach ($array as $value) {
-        $datos = explode(' : ', $value);
-        if(isset($datos[3])){
-
-          if($datos[3] == $_POST[$campo1]){
-            if($datos[0] == $_POST[$campo2]){
-                return true;
-              }
-
-          }
-        }
-      }
-     return false;
-    }
-
+  }
 
 
 

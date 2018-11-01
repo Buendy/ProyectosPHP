@@ -10,3 +10,6 @@ f645de4cd8e36c99438faf1d2d640fe9 : Daniel : buendia : buendy13@hotmail.com : 618
 f645de4cd8e36c99438faf1d2d640fe9 : Daniel : Buendia : gmail@gmail.com : 618152226 : alumno : Bondy13 : 48635162Y
 f645de4cd8e36c99438faf1d2d640fe9 : Daniel : Buendia : smrgg@gmail.com : 618152226 : alumno : Danini : 48635162Y : ./uploads/smrgg@gmail.com
 f645de4cd8e36c99438faf1d2d640fe9 : Roberto : Gomez : roberttt@gmail.com : 618152226 : alumno : Robertikoh : 48635162Y : ./uploads/roberttt@gmail.com.jpg
+f645de4cd8e36c99438faf1d2d640fe9 : Daniel : BUendia : Buendy12@hotmail.com : 618152226 : alumno : EseMismo : 48635162Y : Buendy12@hotmail.com.jpg
+f645de4cd8e36c99438faf1d2d640fe9 : Daniel : Buendia : buendy17@hotmail.com : 618152226 : alumno : EseMismoO : 48635162Y : ./uploads/buendy17@hotmail.com.jpg
+f645de4cd8e36c99438faf1d2d640fe9 : Daniel : Buendia : buendy20@gmail.com : 618152226 : alumno : Buendyy : 48635162Y : ./uploads/buendy20@gmail.com.jpg

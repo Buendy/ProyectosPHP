@@ -8,7 +8,12 @@
   <body>
 
     <?php
+    spl_autoload_register(function($clave){
+      $archivo = $clave . '.php';
+      include $archivo;
+    });
     $errores = [];
+    $dataArray = [];
     session_start();
     if(isset($_SESSION['user']['name'])){
       echo 'Ya estás logueado como: ' . $_SESSION['user']['name'] . '<br>';
@@ -24,36 +29,22 @@
 
 
     } else {
-    
+
       include('validaciones.php');
+
 
       if($errores) {
         include('form.php');
       } else {
+        $insertar = new Dbpdo();
+        $dataArray = ['pass'=> md5($_POST['clave1']), 'name' => $_POST['nombre'], 'apellidos' => $_POST['apellidos'],
+                      'email' => $_POST['email'], 'telefono' => $_POST['telefono'], 'rol' => $_POST['rol'], 'nick' => $_POST['nick'],
+                      'dni' => $_POST['dni'], 'archivo' => $carpeta . $_POST['email'] . '.jpg'];
+                      //echo $dataArray['nick'];
+
+        $insertar->insertUser($dataArray);
 
 
-        $archivo = 'usuarios.txt';
-        $fuente = fopen($archivo, "a+");
-
-        if(is_writable($archivo)){
-
-          $usuario = md5($_POST['clave1']) . ' : ' . $_POST['nombre'] . ' : ' . $_POST['apellidos']
-                  . ' : ' . $_POST['email'] . ' : ' . $_POST['telefono'] . ' : ' . $_POST['rol'] . ' : ' . $_POST['nick'] . ' : ' . $_POST['dni']
-                  . ' : ' . $carpeta . $_POST['email'] . '.jpg';
-          fwrite($fuente, "$usuario\n");
-          fclose($fuente);
-          echo 'Todo correcto, registro completado';
-            echo '<a href="public.php">Volver a la página principal</a><br>';
-
-
-          $destino = $carpeta . $_POST['email'] . '.jpg';
-          if(!move_uploaded_file($_FILES['archivo']['tmp_name'], $destino)) {
-            echo 'Fallo al cargar el archivo';
-          }
-
-        } else {
-          echo 'los datos introducidos no son correctos<br>';
-        }
 
 
       }

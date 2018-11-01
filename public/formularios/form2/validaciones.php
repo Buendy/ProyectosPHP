@@ -1,10 +1,13 @@
 <?php
 
-$tam_max = 2 * 1024 * 1024; //declaramos como tam maximo 2 MB
+// $tam_max = 2 * 1024 * 1024; //declaramos como tam maximo 2 MB
 $carpeta = "./uploads/";
+include('./lib/Dbpdo.php');
 include('Validacion.php');
-  include('Usuario.php');
+
+
 $validaciones = new Validacion();
+$conexion = new Dbpdo();
 
   if(!isset($_POST['nick'])){
     $errores['nick'] = 'No he recibido el nick';
@@ -13,7 +16,9 @@ $validaciones = new Validacion();
     $value = $validaciones->validaNick('nick');
     if($value){
       $errores['nick'] = $value;
-    }
+    }elseif($check = $conexion->checkRepeat('users', 'nick')){
+        $errores['nick'] = 'El nick ya está registrado';
+      }
   }
 
   if (!isset($_POST['nombre'])){
@@ -52,13 +57,12 @@ $validaciones = new Validacion();
   } else{
     Validacion::formateaDatos('email');
 
-    $db = new DBpdo();
-    print_r($db->userEmail('email'));
-    exit;
     $value = $validaciones->validaEmail('email');
     if($value){
-    $errores['email'] = $value;
-    }
+      $errores['email'] = $value;
+    }elseif($check = $conexion->checkRepeat('users', 'email')){
+        $errores['email'] = 'El email ya está registrado';
+        }
   }
 
   if(!isset($_POST['clave1']) || ! isset($_POST['clave2'])){
@@ -94,17 +98,28 @@ $validaciones = new Validacion();
 
   }
 
-
-  if(!isset($_FILES['archivo'])) {
+  if(!isset($_FILES['archivo'])){
     $errores['archivo'] = "No estoy recibiendo el archivo";
-  }elseif($_FILES['archivo']['size'] == 0) {
-    $errores['archivo'] = 'El archivo no ha llegado correctamente';
-  }elseif($_FILES['archivo']['size'] > $tam_max){
-    $errores['archivo'] = "El archivo no puede superar $tam_max bytes";
-  }elseif($_FILES['archivo']['type'] != 'image/jpeg') {
-    $errores['archivo'] = 'No se permiten archivos diferentes de jpg';
+  }else{
+    $value = $validaciones->validaArchivo('archivo');
+    if($value){
+      $errores['archivo'] = $value;
+    }
   }
 
+
+
+
+  // if(!isset($_FILES['archivo'])) {
+  //   $errores['archivo'] = "No estoy recibiendo el archivo";
+  // }elseif($_FILES['archivo']['size'] == 0) {
+  //   $errores['archivo'] = 'El archivo no ha llegado correctamente';
+  // }elseif($_FILES['archivo']['size'] > $tam_max){
+  //   $errores['archivo'] = "El archivo no puede superar $tam_max bytes";
+  // }elseif($_FILES['archivo']['type'] != 'image/jpeg') {
+  //   $errores['archivo'] = 'No se permiten archivos diferentes de jpg';
+  // }
+  //
 
 
 

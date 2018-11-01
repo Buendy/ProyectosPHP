@@ -1,26 +1,17 @@
 <?php
 
-include('Validacion.php');
-$errores = [];
-$validaciones = new Validacion();
-$_POST['nombre'] = '<script>hosada"adsad</script>';
-$_POST['nick'] = 'hol@';
+include('./lib/Dbpdo.php');
+$_POST['email']= 'buendy13@hotsadasdmail.com';
+$conexion = new Dbpdo();
+echo '<pre>';
+
+$check = $conexion->checkEmail('users', 'email');
 
 
-
-if(!isset($_POST['nick'])){
-  $errores['nick'] = 'No he recibido el nick';
+if($check = $conexion->checkEmail('users', 'email')){
+var_dump($check);
 }else{
-  $value = $validaciones->validaNick('nick');
-  if($value){
-    $errores['nick'] = $value;
-  }
+  var_dump($check);
 }
-
-
-Validacion::formateaDatos('nombre');
-var_dump($_POST['nick']);
-var_dump($errores['nick']);
-var_dump($_POST['nombre']);
 
 ?>
