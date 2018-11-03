@@ -1,4 +1,4 @@
-<?php include('funciones.php')?>
+<?php include('funciones.php');?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>

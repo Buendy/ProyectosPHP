@@ -1,16 +1,16 @@
 <form class="formulario" action="<?= $_SERVER['PHP_SELF']?>" method="post">
   <p>
-    <label for="correo">Correo electrónico</label>
+    <label for="email">Correo electrónico</label>
   </p>
   <p>
-    <input type="email" name="correo" <?= mostrarCampo('correo') ?> > <?= mostrarErrorCampo('correo', $errores); ?>
+    <input type="email" name="email" <?= mostrarCampo('email') ?> > <?= mostrarErrorCampo('email', $errores); ?>
   </p>
 
   <p>
-    <label for="clave">Contraseña</label>
+    <label for="pass">Contraseña</label>
   </p>
   <p>
-    <input type="password" name="clave"> <?= mostrarErrorCampo('clave', $errores); ?>
+    <input type="password" name="pass"> <?= mostrarErrorCampo('pass', $errores); ?>
   </p>
 
   <p>

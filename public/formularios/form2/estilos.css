@@ -1,7 +1,56 @@
+body{
+  font-family: "Arial";
+}
 #titulo {
   text-align: center;
 }
 
+.usuarios{
+  align: center;
+}
+
 .centrado{
   text-align: center;
+}
+
+table{
+  border-collapse: collapse;
+  width: 1000px;
+  font-size: 13px;
+
+
+}
+
+th{
+  border-bottom: 2px solid #717171;
+  padding: 6px;
+  text-align: left;
+
+}
+
+/* tr:nth-child(even) {
+    background-color: #dddddd;
+} */
+
+td{
+  padding: 4px;
+  border-top: 1px solid #dddddd;
+}
+
+tr:hover{
+  background-color: #e7e7e7;
+}
+
+
+.boton{
+  background-color:#0079db;
+  text-decoration: none;
+  color: white;
+  border: 3px solid #0079db;
+  border-radius: 2px;
+}
+
+.boton:hover{
+  background-color:#0489f5;
+  border: 3px solid #0489f5;
 }

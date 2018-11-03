@@ -1,17 +1,15 @@
-<?php include('funciones.php') ?>
+<?php include('funciones.php')?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Formulario</title
+    <title>Formulario</title>
+    <link rel="stylesheet" href="estilos.css">
   </head>
   <body>
 
     <?php
-    spl_autoload_register(function($clave){
-      $archivo = $clave . '.php';
-      include $archivo;
-    });
+
     $errores = [];
     $dataArray = [];
     session_start();
@@ -37,13 +35,19 @@
         include('form.php');
       } else {
         $insertar = new Dbpdo();
-        $dataArray = ['pass'=> md5($_POST['clave1']), 'name' => $_POST['nombre'], 'apellidos' => $_POST['apellidos'],
+        $dataArray = ['pass'=> md5($_POST['clave1']), 'nombre' => $_POST['nombre'], 'apellidos' => $_POST['apellidos'],
                       'email' => $_POST['email'], 'telefono' => $_POST['telefono'], 'rol' => $_POST['rol'], 'nick' => $_POST['nick'],
                       'dni' => $_POST['dni'], 'archivo' => $carpeta . $_POST['email'] . '.jpg'];
                       //echo $dataArray['nick'];
 
-        $insertar->insertUser($dataArray);
+        $insertar->insertUser('users', $dataArray);
 
+        $destino = $carpeta . $_POST['email'] . '.jpg';
+        if(!move_uploaded_file($_FILES['archivo']['tmp_name'], $destino)) {
+          echo 'Fallo al cargar el archivo';
+        }
+        echo '<p class="centrado">Correcto, usuario registrado</p><br>';
+        echo '<a class="centrado"href="public.php">Volver a la página principal</a><br>';
 
 
 

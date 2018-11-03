@@ -15,6 +15,8 @@ function mostrarCampo($campo){
 }
 
 
+
+
 // function validaNick($campo){
 //   if(isset($_POST['nombre'])){
 //     $_POST[$campo] = formateaCampo($campo);

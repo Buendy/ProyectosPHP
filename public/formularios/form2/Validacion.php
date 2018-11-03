@@ -51,7 +51,7 @@ class Validacion
 
       if(strlen($_POST[$campo]) < 4){
         return 'El apellido es demasiado corto<br>';
-      } elseif(preg_match("/[^a-zA-Z'áéíóúàèìòùäëïöüÁÉÍÓÚÀÈÌÒÙÄËÏÖÜ]/", $_POST[$campo])){
+      } elseif(preg_match("/[^a-zA-Z'á éíóúàèìòùäëïöüÁÉÍÓÚÀÈÌÒÙÄËÏÖÜ]/", $_POST[$campo])){
         return 'El apellido no puede contener números o caracteres especiales';
       }else {
         return null;
