@@ -68,8 +68,8 @@
       $rol = $row['rol'];
       echo "<input type=\"hidden\" name=\"rol\" value=\"$rol\">";
 
-      echo "<td><input type=\"submit\" name=\"enviar\" value=\"Actualizar\"></td>";
-      echo '<td><a href="http://www.google.es" class="boton" name="button">Borrar</a></td>';
+      echo "<td><input type=\"submit\" name=\"enviar\" value=\"actualizar\"></td>";
+      echo "<td><input type=\"submit\" name=\"enviar\" value=\"borrar\" ></td>";
       echo '</tr>';
       echo "</form>";
 

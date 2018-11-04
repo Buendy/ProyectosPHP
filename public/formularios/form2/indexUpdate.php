@@ -16,6 +16,10 @@
 
 
 
+    if($_POST['enviar'] == 'borrar'){
+
+    }else{
+
 
 
     if (!$_POST) {
@@ -54,6 +58,7 @@
       }
 
     }
+        }
 
 
 
