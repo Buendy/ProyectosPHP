@@ -1,4 +1,5 @@
-<?php include_once('funciones.php')?>
+<?php include_once('funciones.php');
+      include_once('./lib/Dbpdo.php');?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
@@ -16,8 +17,17 @@
 
 
 
-    if($_POST['enviar'] == 'borrar'){
-
+    if(isset($_POST['borrar'])){
+        $delete = new Dbpdo();
+        try{
+        $delete->deleteUsers('users', 'id');
+        echo '<p class="centrado">Usuario borrado</p><a class="centrado" href="./administracion.php">Volver a la página principal</a><br>';
+      }catch (Exception $e){
+        echo '<h3>Ha ocurrido un error, no se ha borrado el usuario</h3>';
+        if($delete->modeDEV){
+          echo $e->getMessage();
+        }
+       }
     }else{
 
 
@@ -41,11 +51,16 @@
       if($errores) {
         include('formUpdate.php');
       } else {
-
-        include_once('./lib/Dbpdo.php');
+        try{
         $update = new Dbpdo();
         $dataArray = ['nick' => $_POST['nick'], 'nombre' => $_POST['nombre'], 'apellidos' => $_POST['apellidos'], 'email' => $_POST['email'],
          'telefono' => $_POST['telefono'], 'dni' => $_POST['dni'], 'rol' => $_POST['rol'], 'id' => $_POST['id']];
+       }catch (Exception $e){
+         echo '<h3>Ha ocurrido un error, no se ha actualizado el usuario</h3>';
+         if($delete->modeDEV){
+           echo $e->getMessage();
+         }
+        }
 
 
         $update->updateUsers('users', $dataArray);

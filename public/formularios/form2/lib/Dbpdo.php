@@ -12,7 +12,7 @@ class Dbpdo
 
   public $db;
 
-  public $modeDEV = true;
+  public $modeDEV = false;
 
   private $persistent = true;
 
@@ -134,7 +134,11 @@ class Dbpdo
 
   public function getUsers($table)
   {
+    if(isset($table)){
     return $this->db->query("SELECT id, nick, nombre, apellidos, email, telefono, dni, rol FROM $table");
+  }else{
+    throw new Exception('A ocurrido un error con la base de datos');
+  }
 
 
 
@@ -143,6 +147,7 @@ class Dbpdo
 
   public function checkRepeatUpdate($table, $campo)
   {
+
 
     $prepare = $this->db->prepare("SELECT * FROM $table WHERE $campo = :field");
     $prepare->bindParam(':field', $_POST[$campo], PDO::PARAM_STR);
@@ -166,8 +171,10 @@ class Dbpdo
        return true;
      }
 
+   }
 
-  }
+
+
 
 
   public function updateUsers($table, $datos)
@@ -175,7 +182,7 @@ class Dbpdo
 
     $prepare = $this->db->prepare("UPDATE $table SET nick=:nick, nombre=:nombre, apellidos=:apellidos, email=:email,
                                                       telefono=:telefono, dni=:dni, rol=:rol WHERE id = :id");
-  
+
 
       $prepare->bindParam(':nick', $datos['nick'], PDO::PARAM_STR);
       $prepare->bindParam(':nombre', $datos['nombre'], PDO::PARAM_STR);
@@ -188,6 +195,16 @@ class Dbpdo
 
       $prepare->execute();
 
+
+  }
+
+
+  public function deleteUsers($table, $campo)
+  {
+    $prepare = $this->db->prepare("DELETE FROM $table WHERE $campo = :field");
+    $prepare->bindParam(':field', $_POST[$campo], PDO::PARAM_STR);
+
+    $prepare->execute();
 
   }
 

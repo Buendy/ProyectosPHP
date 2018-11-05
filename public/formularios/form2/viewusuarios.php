@@ -1,3 +1,4 @@
+<?php include_once('./funciones.php')?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
@@ -10,12 +11,24 @@
 <div align="center">
 
     <?php
+
+    if(!isset($_SESSION['rol']['roldeusuario'])){
+
+      volver();
+
+    }elseif($_SESSION['rol']['roldeusuario'] != 'profesor'){
+
+      volver();
+
+    }else{
     include('./lib/Dbpdo.php');
     $errores = [];
 
     $consulta = new Dbpdo();
 
+    try{
     $query = $consulta->getUsers('users');
+
 
     echo '<table>';
 
@@ -68,20 +81,29 @@
       $rol = $row['rol'];
       echo "<input type=\"hidden\" name=\"rol\" value=\"$rol\">";
 
-      echo "<td><input type=\"submit\" name=\"enviar\" value=\"actualizar\"></td>";
-      echo "<td><input type=\"submit\" name=\"enviar\" value=\"borrar\" ></td>";
+      echo "<td><input type=\"submit\" name=\"actualizar\" value=\"actualizar\"></td>";
+      echo "<td><input type=\"submit\" name=\"borrar\" value=\"borrar\" ></td>";
       echo '</tr>';
       echo "</form>";
 
 
     }
 
-    echo '</table>';
+      echo '</table>';
+    }catch (Exception $e){
+      echo '<h3>Ha ocurrido un error en la conexión a la BD</h3>';
+      if($consulta->modeDEV){
+        echo $e->getMessage();
+      }
+     }
 
-
+    }
 
 
      ?>
+     <br>
+     <a href="./indexCreate.php">Crear usuario</a>
+     <br>
      </div>
 
 

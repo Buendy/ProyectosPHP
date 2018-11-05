@@ -14,6 +14,10 @@ function mostrarCampo($campo){
   }
 }
 
+function volver(){
+  header('Location:./public.php');
+}
+
 
 
 
