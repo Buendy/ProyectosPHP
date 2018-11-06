@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Formulario</title>
     <link rel="stylesheet" href="estilos.css">
+
   </head>
   <body>
 
@@ -12,19 +13,17 @@
 
     <?php
 
-    if(!isset($_SESSION['rol']['roldeusuario'])){
-
-      volver();
-
-    }elseif($_SESSION['rol']['roldeusuario'] != 'profesor'){
+    if(!isset($_SESSION['rol']['roldeusuario']) || $_SESSION['rol']['roldeusuario'] != 'profesor' ){
 
       volver();
 
     }else{
-    include('./lib/Dbpdo.php');
+    //include('./lib/Dbpdo.php');
+    include('./models/Users.php');
     $errores = [];
 
-    $consulta = new Dbpdo();
+    //$consulta = new Dbpdo();
+    $consulta = new Users();
 
     try{
     $query = $consulta->getUsers('users');
@@ -82,7 +81,7 @@
       echo "<input type=\"hidden\" name=\"rol\" value=\"$rol\">";
 
       echo "<td><input type=\"submit\" name=\"actualizar\" value=\"actualizar\"></td>";
-      echo "<td><input type=\"submit\" name=\"borrar\" value=\"borrar\" ></td>";
+      echo "<td><input type=\"submit\" name=\"borrar\" value=\"borrar\"></td>";
       echo '</tr>';
       echo "</form>";
 

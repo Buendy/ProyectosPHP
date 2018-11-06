@@ -11,9 +11,7 @@
     <?php
     session_start();
 
-    if(!isset($_SESSION['rol']['roldeusuario'])){
-        volver();
-    }elseif($_SESSION['rol']['roldeusuario'] != 'profesor'){
+    if(!isset($_SESSION['rol']['roldeusuario']) || $_SESSION['rol']['roldeusuario'] != 'profesor'){
         volver();
     }else{
       echo '<p class="centrado">';
