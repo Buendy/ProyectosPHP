@@ -34,7 +34,7 @@
       if($errores) {
         include('form.php');
       } else {
-        $insertar = new Dbpdo();
+        $insertar = new Users();
         $dataArray = ['pass'=> md5($_POST['clave1']), 'nombre' => $_POST['nombre'], 'apellidos' => $_POST['apellidos'],
                       'email' => $_POST['email'], 'telefono' => $_POST['telefono'], 'rol' => $_POST['rol'], 'nick' => $_POST['nick'],
                       'dni' => $_POST['dni'], 'archivo' => $carpeta . $_POST['email'] . '.jpg'];

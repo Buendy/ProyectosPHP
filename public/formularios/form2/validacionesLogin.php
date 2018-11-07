@@ -37,9 +37,11 @@ if(empty($_POST['email'])){
 if($errores) {
   include('formLogin.php');
 } else {
+  include('./models/Users.php');
+  $rol = new Users();
   echo '<p class="centrado">Correcto, has iniciado sesión </p><br>';
 
-  $result = $conexion->getRolImage('users', 'email');
+  $result = $rol->getRolImage('users', 'email');
 
   $_SESSION['rol']['roldeusuario'] = $result[0]['rol'];
   $_SESSION['archivo']['imagendeusuario'] = $result[0]['archivo'];

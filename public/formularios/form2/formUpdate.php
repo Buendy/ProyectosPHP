@@ -59,8 +59,8 @@ include_once('funciones.php'); ?>
 
   <p>
     <select class="rol" name="rol">
-      <option <?= mostrarCampo('rol') ?> >Alumno</option>
-      <option <?= mostrarCampo('rol') ?> >Profesor</option>
+      <option value="alumno">Alumno</option>
+      <option value="profesor">Profesor</option>
     </select> <?= mostrarErrorCampo('rol', $errores); ?>
   </p>
 

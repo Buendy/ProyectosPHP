@@ -2,7 +2,8 @@
 
 // $tam_max = 2 * 1024 * 1024; //declaramos como tam maximo 2 MB
 $carpeta = "./uploads/";
-include('./lib/Dbpdo.php');
+include_once('./lib/Dbpdo.php');
+include_once('./models/Users.php');
 include('Validacion.php');
 
 
