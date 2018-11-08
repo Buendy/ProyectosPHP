@@ -10,7 +10,7 @@ class Validacion
 
 
   public function validaNick($campo){
-    if(isset($_POST['nombre'])){
+    if(isset($_POST[$campo])){
 
       if(strlen($_POST[$campo]) > 10 || strlen($_POST[$campo]) < 4  ){
         return 'El nick debe tener entre 4 y 10 caracteres';
