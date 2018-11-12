@@ -1,20 +1,29 @@
+
+
+
+<p class="centrado">
+  <?= mostrarErrorCampo('pass', $errores); ?><br>
+  <?= mostrarErrorCampo('email', $errores); ?>
+</p>
+
 <form class="formulario" action="<?= $_SERVER['PHP_SELF']?>" method="post">
-  <p>
-    <label for="email">Correo electrónico</label>
+  <p class="centrado">
+    <label for="email" >Correo electrónico</label>
   </p>
-  <p>
-    <input type="email" name="email" <?= mostrarCampo('email') ?> > <?= mostrarErrorCampo('email', $errores); ?>
-  </p>
-
-  <p>
-    <label for="pass">Contraseña</label>
-  </p>
-  <p>
-    <input type="password" name="pass"> <?= mostrarErrorCampo('pass', $errores); ?>
+  <p class="centrado">
+    <input type="email" name="email" class="form-control campologin" <?= mostrarCampo('email') ?> >
   </p>
 
-  <p>
-    <input type="submit" name="submit" value="Enviar">
+  <p class="centrado">
+    <label for="pass" >Contraseña</label>
+  </p>
+  <p class="centrado">
+    <input type="password" name="pass" class="form-control campologin">
+  </p>
+
+
+  <p class="centrado">
+    <input type="submit" name="submit" value="Enviar" class="btn btn-success">
   </p>
 
 

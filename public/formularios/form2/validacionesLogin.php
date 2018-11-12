@@ -48,9 +48,8 @@ if($errores) {
   $_SESSION['user']['name'] = $_POST['email'];
 
 
-  echo "<a href=\"public.php\" class=\"centrado\">Volver a la página principal</a><br>";
-  echo "<a href=\"logout.php\" class=\"centrado\">Cerrar sesión</a><br>";
-
+  echo "<a href=\"index.html\" class=\"centrado btn btn-success\">Volver a la página principal</a><br><br>";
+  echo "<a href=\"logout.php\" class=\"centrado btn btn-success\">Cerrar sesión</a><br><br>";
 
 
 

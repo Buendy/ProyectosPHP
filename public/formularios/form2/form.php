@@ -4,96 +4,136 @@
 
 <form class="formulario" action="<?= $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
 
-  <p>
-    <label for="nick">Nick</label>
-  </p>
-
-  <p>
-    <input type="text" name="nick" <?= mostrarCampo('nick') ?> > <?= mostrarErrorCampo('nick', $errores); ?>
-  </p>
-
-  <p>
-    <label for="nombre">Nombre</label>
-  </p>
-
-  <p>
-    <input type="text" name="nombre" <?= mostrarCampo('nombre') ?> > <?= mostrarErrorCampo('nombre', $errores); ?>
-  </p>
-
-  <p>
-    <label for="apellidos">Apellidos</label>
-  </p>
+      <br><p class="titformulario centrado">Formulario de registro</p>
 
 
-  <p>
-    <input type="text" name="apellidos" <?= mostrarCampo('apellidos') ?> > <?= mostrarErrorCampo('apellidos', $errores); ?>
-  </p>
+  <div class="row">
+  <div class="col-md-4">
+    <p>
+      <label for="nick" class="formulario">Nick</label><?= mostrarErrorCampo('nick', $errores); ?>
+    </p>
 
-  <p>
-    <label for="email">Email</label>
-  </p>
+    <p>
+      <input type="text" name="nick" class="form-control formulario ancho" <?= mostrarCampo('nick') ?> >
+    </p>
 
-  <p>
-    <input type="email" name="email" <?= mostrarCampo('email') ?> > <?= mostrarErrorCampo('email', $errores); ?>
-  </p>
+    <p>
+      <label for="nombre" class="formulario">Nombre</label><?= mostrarErrorCampo('nombre', $errores); ?>
+    </p>
 
-  <p>
-    <label for="telefono">Telefono</label>
-  </p>
+    <p>
+      <input type="text" name="nombre" class="form-control formulario ancho" <?= mostrarCampo('nombre') ?> >
+    </p>
 
-  <p>
-    <input type="text" name="telefono" placeholder="Ej: 618123456" <?= mostrarCampo('telefono') ?> > <?= mostrarErrorCampo('telefono', $errores); ?>
-  </p>
-
-
-  <p>
-    <label for="clave1">Contraseña</label>
-  </p>
-
-  <p>
-    <input type="password" name="clave1"> <?= mostrarErrorCampo('clave', $errores); ?>
-  </p>
-
-  <p>
-    <label for="clave2">Repite contraseña</label>
-  </p>
-
-  <p>
-    <input type="password" name="clave2">
-  </p>
-
-  <p>
-    <label for="dni">DNI</label>
-  </p>
-
-  <p>
-    <input type="text" name="dni" <?= mostrarCampo('dni') ?> > <?= mostrarErrorCampo('dni', $errores); ?>
-  </p>
-
-  <p>
-    <label for="rol">Tipo de usuario</label>
-  </p>
-
-  <p>
-    <select class="rol" name="rol">
-      <option value="alumno">Alumno</option>
-      <option value="profesor">Profesor</option>
-    </select> <?= mostrarErrorCampo('rol', $errores); ?>
-  </p>
-
-  <p>
-    <label for="archivo">Subir una imagen</label>
-  </p>
-
-  <p>
-    <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
-    <input type="file" name="archivo"><?= mostrarErrorCampo('archivo', $errores); ?>
-  </p>
+    <p>
+      <label for="apellidos" class="formulario">Apellidos</label><?= mostrarErrorCampo('apellidos', $errores); ?>
+    </p>
 
 
-  <p>
-    <input type="submit" name="submit" value="Enviar">
-  </p>
+    <p>
+      <input type="text" name="apellidos" class="form-control formulario ancho" <?= mostrarCampo('apellidos') ?> >
+    </p>
+
+
+    <p>
+      <label for="email" class="formulario">Email</label><?= mostrarErrorCampo('email', $errores); ?>
+    </p>
+
+    <p>
+      <input type="email" name="email" class="form-control formulario ancho" <?= mostrarCampo('email') ?> >
+    </p>
+
+
+    <p>
+      <label for="telefono" class="formulario">Telefono</label><?= mostrarErrorCampo('telefono', $errores); ?>
+    </p>
+
+    <p>
+      <input type="text" name="telefono" class="form-control formulario ancho" placeholder="Ej: 618123456" <?= mostrarCampo('telefono') ?> >
+    </p>
+
+
+    <p>
+      <label for="clave1" class="formulario">Contraseña</label><?= mostrarErrorCampo('clave', $errores); ?>
+    </p>
+
+    <p>
+      <input type="password" name="clave1" class="form-control formulario ancho">
+    </p>
+
+    <p>
+      <label for="clave2" class="formulario">Repite contraseña</label>
+    </p>
+
+    <p>
+      <input type="password" name="clave2" class="form-control formulario ancho">
+    </p>
+
+    <p>
+      <label for="dni" class="formulario">DNI</label><?= mostrarErrorCampo('dni', $errores); ?>
+    </p>
+
+    <p>
+      <input type="text" name="dni" class="form-control  formulario ancho" <?= mostrarCampo('dni') ?> >
+    </p>
+
+
+
+  </div>
+
+    <div class="col-md-1">
+
+    </div>
+  <div class="col-md-3"><br><br><br><br><br><br>
+
+    <p>
+      <label for="rol" class="formulario">Tipo de usuario</label>
+    </p>
+
+    <p>
+      <select class="rol" name="rol">
+        <option value="alumno">Alumno</option>
+        <option value="profesor">Profesor</option>
+      </select>
+    </p>
+    <p>
+      <?= mostrarErrorCampo('rol', $errores); ?>
+    </p>
+
+    <p>
+      <label for="archivo" class="formulario" >Subir una imagen</label>
+    </p>
+
+    <p>
+      <input type="hidden" name="MAX_FILE_SIZE" value="5000000" >
+      <input type="file" name="archivo" class="btn btn-success">
+    </p>
+    <p><?= mostrarErrorCampo('archivo', $errores); ?></p>
+
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+
+  </div>
+  <div class="col-md-1"><br><br>
+    <p>
+      <input type="submit" name="submit" value="Enviar" class="btn btn-success" id="btn-form">
+    </p>
+
+  </div>
+  <div class="col-md-3">
+
+  </div>
+
+</div>
+
+
+
+
+
 
 
 

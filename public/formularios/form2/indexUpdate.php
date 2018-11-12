@@ -6,17 +6,18 @@
   <head>
     <meta charset="utf-8">
     <title>Formulario</title>
-    <link rel="stylesheet" href="estilos.css">
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/estilos.css">
   </head>
   <body>
+
 
     <?php
 
     $errores = [];
     $dataArray = [];
     session_start();
-
-
 
     if(isset($_POST['borrar'])){
         $delete = new Dbpdo();
@@ -29,6 +30,8 @@
           echo $e->getMessage();
         }
        }
+    }elseif(isset($_POST['verCursos'])){
+      include('vistaCursos.php');
     }else{
 
 
@@ -84,5 +87,10 @@
 
      ?>
 
+
+</footer>
+     <script src="./js/jquery-3.3.1.min.js"></script>
+     <script src="./js/popper.js"></script>
+     <script src="./js/bootstrap.min.js"></script>
   </body>
 </html>

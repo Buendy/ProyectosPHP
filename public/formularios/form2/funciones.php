@@ -3,7 +3,7 @@
 
 function mostrarErrorCampo($campo, $errores){
   if(isset($errores[$campo])){
-    echo '<span clas="listaErrores">' . $errores[$campo] . '</span>';
+    echo '<span class="listaErrores form-group">' . $errores[$campo] . '</span>';
   }
 }
 
@@ -15,7 +15,22 @@ function mostrarCampo($campo){
 }
 
 function volver(){
-  header('Location:./public.php');
+  header('Location:./index.html');
+}
+
+function cursos($prepare){
+
+  echo '<table>';
+  echo '<tr>';
+  echo '<th class="centrado">Curso</th>';
+  echo '<th class="centrado">Descripción</th>';
+  echo '</tr>';
+  while($row = $prepare->fetch(PDO::FETCH_ASSOC)){
+    echo '<tr>';
+    echo '<td class="centrado">'.$row['nombre'].'</td>';
+    echo '<td class="centrado">'.$row['descripcion'].'</td>';
+    echo '</tr>';
+}
 }
 
 
