@@ -1,5 +1,5 @@
 <?php include_once('./funciones.php');
-      include_once('./models/Users.php');?>
+      include_once('./models/Curso.php');?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
@@ -49,11 +49,11 @@
 
 
 
-        $consulta = new Users();
+        $consulta = new Curso();
         $query = $consulta->UserCurso($_POST['nombre']);
-        $row = $query->fetch(PDO::FETCH_ASSOC);
+        //$row = $query->fetch(PDO::FETCH_ASSOC);
 
-        if($row != false){
+        if($query->rowCount()){
           cursos($query);
           echo '<br><a  href="administracion.php" class="btn btn-success">Volver</a><br><br>';
         }else {

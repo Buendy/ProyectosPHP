@@ -18,19 +18,22 @@ function volver(){
   header('Location:./index.html');
 }
 
-function cursos($prepare){
+function cursos($prepare)
+{
 
   echo '<table>';
   echo '<tr>';
   echo '<th class="centrado">Curso</th>';
   echo '<th class="centrado">Descripción</th>';
   echo '</tr>';
+
   while($row = $prepare->fetch(PDO::FETCH_ASSOC)){
+  
     echo '<tr>';
     echo '<td class="centrado">'.$row['nombre'].'</td>';
     echo '<td class="centrado">'.$row['descripcion'].'</td>';
     echo '</tr>';
-}
+  }
 }
 
 
