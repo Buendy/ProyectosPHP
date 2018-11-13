@@ -1,16 +1,6 @@
 <?php include_once('funciones.php');
       include_once('./lib/Dbpdo.php');
       include_once('./models/Users.php');?>
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Formulario</title>
-
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/estilos.css">
-  </head>
-  <body>
 
 
     <?php
@@ -86,11 +76,3 @@
 
 
      ?>
-
-
-</footer>
-     <script src="./js/jquery-3.3.1.min.js"></script>
-     <script src="./js/popper.js"></script>
-     <script src="./js/bootstrap.min.js"></script>
-  </body>
-</html>

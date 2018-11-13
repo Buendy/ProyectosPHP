@@ -33,33 +33,47 @@
     </div>
   </nav>
 
-<div align="center">
-  <?php
-
-  if(!isset($_SESSION['rol']['roldeusuario']) || $_SESSION['rol']['roldeusuario'] != 'profesor')
-  {
-    volver();
-  }else{
 
 
-    echo '<pre>';
-    $consulta = new Users();
-    $query = $consulta->UserCurso($_POST['nombre']);
-    $row = $query->fetch(PDO::FETCH_ASSOC);
+<div class="row">
+  <div class="col-md-3">
 
-    if($row != false){
-      cursos($query);
-      echo '<br><a  href="administracion.php" class="btn btn-success">Volver</a><br><br>';
-    }else {
-      echo '<p class="listaErrores">Este alumno no está matriculado en ningun curso</p>';
-      echo '<a  href="administracion.php" class="btn btn-success">Volver</a><br><br>';
-    }
+  </div>
+  <div class="col-md-6">
+    <div align="center">
+      <?php
+      if(!isset($_SESSION['rol']['roldeusuario']) || $_SESSION['rol']['roldeusuario'] != 'profesor')
+      {
+        volver();
+      }else{
 
-  }
 
-  ?>
 
+        $consulta = new Users();
+        $query = $consulta->UserCurso($_POST['nombre']);
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+
+        if($row != false){
+          cursos($query);
+          echo '<br><a  href="administracion.php" class="btn btn-success">Volver</a><br><br>';
+        }else {
+          echo '<br><br><p class="listaErrores">Este alumno no está matriculado en ningun curso</p><br><br>';
+          echo '<a  href="administracion.php" class="btn btn-success">Volver</a><br><br>';
+        }
+
+      }
+      ?>
+    </div>
+
+
+  </div>
+  <div class="col-md-3>
+
+  </div>
 </div>
+
+
+
 
 
 

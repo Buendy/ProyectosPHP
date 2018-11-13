@@ -1,12 +1,4 @@
 <?php include_once('./funciones.php')?>
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Administración</title>
-  </head>
-  <body>
-
 
 
     <?php
