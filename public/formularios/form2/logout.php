@@ -31,12 +31,20 @@
 
       </ul>
     </div>
-  </nav>
+  </nav><br><br><br><br><br>
+  <div class="row">
+    <div class="col-md-5">
 
-<p>Acabas de salir de la sesión</p>
-<br>
-<a href="index.html">Regresar a la página principal</a>
+    </div>
+    <div class="col-md-2 centrado" id="cuadrologin">
+        <p>Acabas de salir de la sesión</p>
+        <br>
+        <a href="index.html">Regresar a la página principal</a>
+      </div>
+      <div class="col-md-5">
 
+      </div>
+    </div>
 
      <script src="./js/jquery-3.3.1.min.js"></script>
      <script src="./js/popper.js"></script>

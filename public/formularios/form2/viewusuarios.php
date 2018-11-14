@@ -11,26 +11,26 @@
   <body>
 
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#" id="cabeceralateral">Form 1.0</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item ">
-              <a class="nav-link botones" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link botones" href="index.php">registrarse</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link botones " href="login.php">Iniciar sesión</a>
-            </li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#" id="cabeceralateral">Form 1.0</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item ">
+          <a class="nav-link botones" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link botones" href="index.php">registrarse</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link botones " href="login.php">Iniciar sesión</a>
+        </li>
 
-          </ul>
-        </div>
-      </nav>
+      </ul>
+    </div>
+  </nav>
 
 
     <div align="center">
@@ -39,6 +39,7 @@
 
 
     <?php
+    session_start();
 
     if(!isset($_SESSION['rol']['roldeusuario']) || $_SESSION['rol']['roldeusuario'] != 'profesor' ){
 
@@ -122,6 +123,10 @@
     }
 
       echo '</table>';
+      echo '<p class="centrado">';
+      echo '<a  href="index.html" class="btn btn-success">Volver a la página principal</a><br><br>';
+      echo '<a  href="logout.php" class="btn btn-success">Cerrar sesión</a><br>';
+      echo '</p>';
     }catch (Exception $e){
       echo '<h3>Ha ocurrido un error en la conexión a la BD</h3>';
       if($consulta->modeDEV){

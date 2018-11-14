@@ -39,7 +39,7 @@
           session_start();
           if(isset($_SESSION['rol']['roldeusuario']) && $_SESSION['rol']['roldeusuario'] == 'profesor'){
 
-            echo '<a href="administracion.php" class="nav-link botoneslateral">Administración</a> <br>';
+            echo '<a href="viewusuarios.php" class="nav-link botoneslateral">Administración</a> <br>';
 
           }
 

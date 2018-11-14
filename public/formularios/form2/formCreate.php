@@ -5,53 +5,53 @@
 <form class="formulario" action="<?= $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
 
   <p>
-    <label for="nick">Nick</label>
+    <label for="nick">Nick</label> <?= mostrarErrorCampo('nick', $errores); ?>
   </p>
 
   <p>
-    <input type="text" name="nick" <?= mostrarCampo('nick') ?> > <?= mostrarErrorCampo('nick', $errores); ?>
+    <input type="text" name="nick" <?= mostrarCampo('nick') ?> >
   </p>
 
   <p>
-    <label for="nombre">Nombre</label>
+    <label for="nombre">Nombre</label> <?= mostrarErrorCampo('nombre', $errores); ?>
   </p>
 
   <p>
-    <input type="text" name="nombre" <?= mostrarCampo('nombre') ?> > <?= mostrarErrorCampo('nombre', $errores); ?>
+    <input type="text" name="nombre" <?= mostrarCampo('nombre') ?> >
   </p>
 
   <p>
-    <label for="apellidos">Apellidos</label>
-  </p>
-
-
-  <p>
-    <input type="text" name="apellidos" <?= mostrarCampo('apellidos') ?> > <?= mostrarErrorCampo('apellidos', $errores); ?>
-  </p>
-
-  <p>
-    <label for="email">Email</label>
-  </p>
-
-  <p>
-    <input type="email" name="email" <?= mostrarCampo('email') ?> > <?= mostrarErrorCampo('email', $errores); ?>
-  </p>
-
-  <p>
-    <label for="telefono">Telefono</label>
-  </p>
-
-  <p>
-    <input type="text" name="telefono" placeholder="Ej: 618123456" <?= mostrarCampo('telefono') ?> > <?= mostrarErrorCampo('telefono', $errores); ?>
+    <label for="apellidos">Apellidos</label> <?= mostrarErrorCampo('apellidos', $errores); ?>
   </p>
 
 
   <p>
-    <label for="clave1">Contraseña</label>
+    <input type="text" name="apellidos" <?= mostrarCampo('apellidos') ?> >
   </p>
 
   <p>
-    <input type="password" name="clave1"> <?= mostrarErrorCampo('clave', $errores); ?>
+    <label for="email">Email</label> <?= mostrarErrorCampo('email', $errores); ?>
+  </p>
+
+  <p>
+    <input type="email" name="email" <?= mostrarCampo('email') ?> >
+  </p>
+
+  <p>
+    <label for="telefono">Telefono</label> <?= mostrarErrorCampo('telefono', $errores); ?>
+  </p>
+
+  <p>
+    <input type="text" name="telefono" placeholder="Ej: 618123456" <?= mostrarCampo('telefono') ?> >
+  </p>
+
+
+  <p>
+    <label for="clave1">Contraseña</label> <?= mostrarErrorCampo('clave', $errores); ?>
+  </p>
+
+  <p>
+    <input type="password" name="clave1">
   </p>
 
   <p>
@@ -63,11 +63,11 @@
   </p>
 
   <p>
-    <label for="dni">DNI</label>
+    <label for="dni">DNI</label> <?= mostrarErrorCampo('dni', $errores); ?>
   </p>
 
   <p>
-    <input type="text" name="dni" <?= mostrarCampo('dni') ?> > <?= mostrarErrorCampo('dni', $errores); ?>
+    <input type="text" name="dni" <?= mostrarCampo('dni') ?> >
   </p>
 
   <p>

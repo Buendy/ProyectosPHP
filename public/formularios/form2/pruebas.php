@@ -1,17 +1,11 @@
 <?php
 
-
-include('./models/Users.php');
-$nombre = 'jose';
-echo '<pre>';
-$consulta = new Users();
-//print_r($consulta->getUsers('users'));
-$table = $consulta->UserCurso($nombre);
+include_once('./models/Post.php');
 
 
-echo $table;
-
-
+$consulta = new Post();
+$query = $consulta->getPosts('users');
+var_dump($query);
 
 
 

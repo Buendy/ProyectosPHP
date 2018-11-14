@@ -1,6 +1,6 @@
 <?php
 
-include_once('./lib/Dbpdo.php');
+include_once('../lib/Dbpdo.php');
 
 
 class Users extends Dbpdo
@@ -46,7 +46,7 @@ class Users extends Dbpdo
 
   public function getRolImage($table, $field)
   {
-    $prepare = $this->db->prepare("SELECT rol, archivo FROM $table WHERE email = :field");
+    $prepare = $this->db->prepare("SELECT rol, archivo, id FROM $table WHERE email = :field");
 
     $prepare->bindParam(':field', $_POST[$field], PDO::PARAM_STR);
 
@@ -96,6 +96,18 @@ class Users extends Dbpdo
       }
     }
 
+    public function getUser($table, $id)
+    {
+      if(!isset($table) || !isset($id)){
+        throw new Exception('Hay problemas con la BD');
+      }else{
+        $prepare = $this->db->prepare("SELECT nick FROM $table WHERE id = :id");
+        $prepare->bindParam(':id', $id, PDO::PARAM_STR);
+        $prepare->execute();
+        $row = $prepare->fetch(PDO::FETCH_ASSOC);
+        return $row['nick'];
+      }
+    }
 
 
 

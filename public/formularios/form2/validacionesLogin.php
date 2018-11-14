@@ -46,6 +46,8 @@ if($errores) {
   $_SESSION['rol']['roldeusuario'] = $result[0]['rol'];
   $_SESSION['archivo']['imagendeusuario'] = $result[0]['archivo'];
   $_SESSION['user']['name'] = $_POST['email'];
+  $_SESSION['idUsuarioConSesionIniciada'] = $result[0]['id'];
+  
 
 
   echo "<a href=\"index.html\" class=\"centrado btn btn-success\">Volver a la página principal</a><br><br>";
