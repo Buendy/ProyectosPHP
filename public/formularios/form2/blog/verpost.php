@@ -36,7 +36,7 @@
     $cuerpo = $row['cuerpo'];
     $fecha = $row['fecha'];
     echo "<h3>$titulo</h3>";
-    echo "<p class=\"titlepost\">Escrito por: ". $_SESSION['usuarioQueEscribePost'] . " - Fecha creación: " . $fecha . "</>";
+    echo "<p class=\"titlepost\">Escrito por: ". $_POST['idusuario'] . " - Fecha creación: " . $fecha . "</>";
     echo "<p>$cuerpo</p>";
 
 

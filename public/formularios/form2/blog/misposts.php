@@ -59,6 +59,8 @@ if(!isset($_SESSION['rol']['roldeusuario'])){
     echo '<tr>';
     $autor = new Users();
     $_SESSION['usuarioQueEscribePost'] = $autor->getUser('users', $row['idUsuario']);
+    $idUs = $_SESSION['usuarioQueEscribePost'];
+    echo "<input type=\"hidden\" name=\"idusuario\" value=\"$idUs\">";
 
     echo "<td class=\"tdposts\">".$row['titulo'].'</td>';
     echo "<td class=\"tdposts\">".$row['fecha'].'</td>';

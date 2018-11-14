@@ -12,7 +12,10 @@
       while ($row = $query->fetch(PDO::FETCH_ASSOC)){
         echo "<form class=\"form\" action=\"verpost.php\" method=\"post\">";
         $id = $row['id'];
+        $idusuario = $row['idUsuario'];
         $_SESSION['usuarioQueEscribePost'] = $autor->getUser('users', $row['idUsuario']);
+        $idUs = $_SESSION['usuarioQueEscribePost'];
+        echo "<input type=\"hidden\" name=\"idusuario\" value=\"$idUs\">";
 
         echo "<input type=\"hidden\" name=\"id\" value=\"$id\">";
         echo "<div class=\"posts\"><p><h4 class=\"titulopost\">" . $row['titulo'] . " - ";

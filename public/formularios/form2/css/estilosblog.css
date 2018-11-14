@@ -54,6 +54,7 @@ body {
     height: auto;
     background-color: #9ee2c7;
     padding: 80px;
+
 }
 
 
@@ -152,4 +153,8 @@ color: #424242;
   border-radius: 5px;
   margin: -2px;
   margin-left: 10px;
+}
+
+.postss{
+  overflow: scroll;
 }
