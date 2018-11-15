@@ -2,7 +2,8 @@
 
 
 if(isset($_POST['actualizar'])){
-  echo "ACTUALIZAR";
+  include_once('../funciones.php');
+  include('./formActualizar.php');
 }elseif(isset($_POST['borrar'])){
 
   include('./deletepost.php');

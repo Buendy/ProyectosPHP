@@ -52,5 +52,19 @@ class Post extends Dbpdo
 
   }
 
+  public function updatePost($table, $datos){
+    if(!isset($table) || !isset($datos)){
+      throw new Exception('A ocurrido un error, el post no se ha actualizado');
+    }else{
+      $prepare = $this->db->prepare("UPDATE $table set titulo=:titulo, cuerpo=:cuerpo, fecha=CURDATE() WHERE id=:id");
+      $prepare->bindParam(':titulo', $datos['titulo'], PDO::PARAM_STR);
+      $prepare->bindParam(':cuerpo', $datos['cuerpo'], PDO::PARAM_STR);
+      $prepare->bindParam(':id', $datos['id'], PDO::PARAM_STR);
+
+      $prepare->execute();
+
+    }
+  }
+
 }
  ?>

@@ -14,6 +14,11 @@ function mostrarCampo($campo){
   }
 }
 
+function mostrarCampoCuerpo($campo){
+  if(isset($_POST[$campo])){
+    echo $_POST[$campo];
+  }
+}
 function volver(){
   header('Location:./index.html');
 }
@@ -28,7 +33,7 @@ function cursos($prepare)
   echo '</tr>';
 
   while($row = $prepare->fetch(PDO::FETCH_ASSOC)){
-  
+
     echo '<tr>';
     echo '<td class="centrado">'.$row['nombre'].'</td>';
     echo '<td class="centrado">'.$row['descripcion'].'</td>';

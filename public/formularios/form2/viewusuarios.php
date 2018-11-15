@@ -84,7 +84,6 @@
       $id = $row['id'];
       echo "<input type=\"hidden\" name=\"id\" value=\"$id\">";
 
-
       echo '<td>'.$row['nick'].'</td>';
       $nick = $row['nick'];
       echo "<input type=\"hidden\" name=\"nick\" value=\"$nick\">";

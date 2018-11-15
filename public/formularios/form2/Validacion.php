@@ -89,7 +89,7 @@ class Validacion
       if(strlen($_POST[$campo]) < 6){
         return 'El email es demasiado corto';
       }elseif(!preg_match_all('/^[a-zA-Z\d-_*\.]+@[a-zA-Z\d-_*\.]+\.[a-zA-Z\d]{2,}$/', $_POST[$campo])){
-        return 'El email no es correcto'; 
+        return 'El email no es correcto';
       }else {
         return null;
       }
@@ -223,6 +223,28 @@ class Validacion
       return 'No he recibido el archivo';
     }
 
+  }
+
+  public function validaTitulo($campo){
+    if(isset($_POST[$campo])){
+
+      if(strlen($_POST[$campo]) >= 100){
+        return 'El titulo es demasiado largo';
+      }
+    }else{
+      return 'No he recibido el titulo';
+    }
+  }
+
+  public function validaCuerpo($campo){
+    if(isset($_POST[$campo])){
+
+      if(strlen($_POST[$campo]) >= 2000){
+        return 'El cuerpo es demasiado largo';
+      }
+    }else{
+      return 'No he recibido el cuerpo';
+    }
   }
 
 
