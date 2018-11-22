@@ -60,8 +60,8 @@ class Users extends Dbpdo
     public function insertUser($table, $fields)
     {
       if(isset($table) || isset($fields)){
-        $prepare = $this->db->prepare("INSERT INTO $table(nick, nombre, apellidos, email, telefono, pass, dni, rol, archivo)
-                                       VALUES(:nick, :nombre, :apellidos, :email, :telefono, :pass, :dni, :rol, :archivo)");
+        $prepare = $this->db->prepare("INSERT INTO $table(nick, nombre, apellidos, email, pass, rol)
+                                       VALUES(:nick, :nombre, :apellidos, :email, :pass, :rol)");
 
         $prepare->bindParam(':nick', $fields['nick'], PDO::PARAM_STR);
         $prepare->bindParam(':nombre', $fields['nombre'], PDO::PARAM_STR);

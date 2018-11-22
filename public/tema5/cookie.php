@@ -1,6 +1,6 @@
 <?php
 
-$duración = time() + (60*60*24*365*2);
+$duracion = time() + (60*60*24*365*2);
 
 setcookie('nombre', 'Daniel');
 setcookie('edad', '28');

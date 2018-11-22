@@ -5,7 +5,7 @@ class Dbpdo
   private $host = 'mysql';
   private $user = 'default';
   private $pass = 'secret';
-  private $dbname = 'dbejemplopdo';
+  private $dbname = 'alumno03';
 
 
   public $errors  = false;
@@ -61,8 +61,8 @@ class Dbpdo
   public function checkRepeat($table, $campo)
   {
 
-    $prepare = $this->db->prepare("SELECT $campo FROM $table WHERE $campo = :field");
-    $prepare->bindParam(':field', $_POST[$campo], PDO::PARAM_STR);
+    $prepare = $this->db->prepare("SELECT $campo FROM $table WHERE email = :email");
+    $prepare->bindParam(':email', $_POST[$campo], PDO::PARAM_STR);
 
     $prepare->execute();
 
